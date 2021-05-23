@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Home"
+    url: /index.html
+  - title: "Sites"
+    url: /sites/
+  - title: "CV"
+    url: /cv/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
