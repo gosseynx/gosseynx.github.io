@@ -9,7 +9,7 @@ toc: true
 toc_label: "Contenu"
 ---
 
-# L'Hypothèse de Riemann #
+# L'hypothèse de Riemann #
 
 ## Les problèmes du Prix du Millénaire ## 
 

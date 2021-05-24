@@ -6,7 +6,7 @@ main:
     url: /sites/
   - title: "CV"
     url: /cv/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
+  - title: "Enseignements"
+    url: /enseignements/
   # - title: "Sitemap"
   #   url: /sitemap/
