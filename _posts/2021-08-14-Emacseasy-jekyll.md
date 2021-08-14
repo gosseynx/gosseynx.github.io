@@ -32,4 +32,4 @@ Heureusement la solution est directe : il suffit d'indiquer à Emacs où trouver
 (setq exec-path (append exec-path '("~/gems/bin")))
 ```
 
-Une fois Emacs ouvert un simple  `M-X easy-jekyll` placera l'éditeur dans le répertoire local où sont stockés les différents posts  et affichera les commandes pour automatiser rédaction et publication !
+Une fois Emacs ouvert un simple  `M-X easy-jekyll` placera l'éditeur dans le répertoire local où sont stocké les différents posts  et affichera les commandes pour automatiser rédaction et publication !
