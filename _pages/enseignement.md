@@ -26,5 +26,4 @@ On touvera ici des textes concernant le cours d'analyse de seconde année. Ces s
 5. <i class="fas fa-book"></i>&nbsp; [Suites Numériques](/assets/documents/SyntheseSuitesNumeriques.pdf)
 
 
-<!-- # ~~Mettons ici une belle image  !~~ -->
-<!-- # {% picture jpt-webp lunettesUnsplash.jpg %} -->
+
