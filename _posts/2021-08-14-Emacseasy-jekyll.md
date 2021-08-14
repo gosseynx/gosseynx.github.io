@@ -15,9 +15,9 @@ date:   2021-08-14 15:16:25 +0200
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/emacsred-80.png)
 
 
-Publier des articles avec [emacs](https://www.gnu.org/software/emacs/) pour [Jekyll](https://jekyllrb.com/) peut être à la fois simple et _entièrement automatisé_. en utilisant le package [easy-jekyll](https://github.com/masasam/emacs-easy-jekyll).
+Publier des articles avec [emacs](https://www.gnu.org/software/emacs/) pour [Jekyll](https://jekyllrb.com/) peut être à la fois simple et _entièrement automatisé_ en utilisant le package [easy-jekyll](https://github.com/masasam/emacs-easy-jekyll).
 
-&Agrave; une seule condition. La configuration initiale de Jekyll recommande d'utiliser des gems Ruby sur une base locale et de les conserver sous le répertoire `~/gems/`.
+&Agrave; une seule condition :  la configuration initiale de Jekyll recommande d'utiliser des gems Ruby sur une base locale et de les conserver sous le répertoire `~/gems/`.
 La conséquence est qu'Emacs ne trouvera pas le binaire `jekyll` à cet emplacement inhabituel.
 
 
@@ -32,4 +32,4 @@ Heureusement la solution est directe : il suffit d'indiquer à Emacs où trouver
 (setq exec-path (append exec-path '("~/gems/bin")))
 ```
 
-Une fois Emacs ouvert un simple  `M-X easy-jekyll` placera l'éditeur dans le répertoire local où sont stocké les différents posts  et affichera les commandes pour automatiser rédaction et publication !
+Une fois Emacs ouvert un simple  `M-X easy-jekyll` placera l'éditeur dans le répertoire local où sont stockés les différents posts  et affichera les commandes pour automatiser à la fois rédaction et publication !
