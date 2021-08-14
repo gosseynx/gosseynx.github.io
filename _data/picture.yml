@@ -1,0 +1,6 @@
+# Jekyll_picture_tag configuration file
+presets:
+    direct-url:
+      output_format: direct_url
+      fallback-width: 1200
+

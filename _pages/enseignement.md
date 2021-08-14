@@ -3,9 +3,9 @@ title: Enseignements
 permalink: /enseignements/
 excerpt: "<ul><li>Cours</li> <li>Synthèses</li> <li>Feuilles d'Exercices</li> <li>Colles</li></ul>"
 header: 
-  overlay_image: /assets/images/amphi1067x800.webp
-  overlay_filter: 0.3
-  caption: "Crédit photo : [**Unsplash**](https://unsplash.com)"
+ overlay_image: /assets/images/amphi1067x800.webp
+ overlay_filter: 0.3
+ caption: "Crédit photo : [**Unsplash**](https://unsplash.com)"
 toc: true
 ---
   
@@ -24,3 +24,7 @@ On touvera ici des textes concernant le cours d'analyse de seconde année. Ces s
 4. <i class="fas fa-book"></i>&nbsp; [Séries Numériques](/assets/documents/SyntheseSeriesNumeriques.pdf)
 
 5. <i class="fas fa-book"></i>&nbsp; [Suites Numériques](/assets/documents/SyntheseSuitesNumeriques.pdf)
+
+
+<!-- # ~~Mettons ici une belle image  !~~ -->
+<!-- # {% picture jpt-webp lunettesUnsplash.jpg %} -->

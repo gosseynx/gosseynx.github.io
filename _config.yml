@@ -228,6 +228,7 @@ plugins:
   - kramdown-math-katex
   - execjs
   - duktape
+  - jekyll_picture_tag
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
@@ -239,7 +240,7 @@ whitelist:
   - kramdown-math-katex
   - exec-js
   - duktape
-
+  - jekyll_picture_tag
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
@@ -276,6 +277,11 @@ compress_html:
   ignore:
     envs: development
 
+# Jekyll_picture_tag configuration
+picture:
+  source: assets/images/fullsize/
+  output: assets/images/generated/
+  suppress-warning: true
 
 # Defaults
 defaults:

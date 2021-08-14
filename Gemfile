@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-gist"
   gem "jekyll-feed"
+  gem "jekyll_picture_tag"
 end
 
 gem 'katex', '~> 0.8.0'
