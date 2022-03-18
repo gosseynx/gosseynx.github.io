@@ -15,6 +15,7 @@ date:   2021-08-14 15:16:25 +0200
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/emacsred-80.png)
 
 
+
 Publier des articles avec [emacs](https://www.gnu.org/software/emacs/) pour [Jekyll](https://jekyllrb.com/) peut être à la fois simple et _entièrement automatisé_ en utilisant le package [easy-jekyll](https://github.com/masasam/emacs-easy-jekyll).
 
 &Agrave; une seule condition :  la configuration initiale de Jekyll recommande d'utiliser des gems Ruby sur une base locale et de les conserver sous le répertoire `~/gems/`.

@@ -1,6 +1,31 @@
 # Jekyll_picture_tag configuration file
-presets:
-    direct-url:
-      output_format: direct_url
-      fallback-width: 1200
+# presets:
+#     direct-url:
+#       output_format: direct_url
+#       fallback-width: 1200
 
+
+
+
+# Recopiage de la doc Jekyll_picture_tag :
+media_queries:
+  large:  'min_width: 800px'
+  medium: 'min_width: 601px'
+  mobile: 'max-width: 600px'
+
+presets:
+  minimalmistakes:
+    formats: [webp, original]
+    widths: [600, 800, 1200]
+    media_widths:
+      mobile: [300,600]
+      medium: [600, 800]
+      large:  [800, 1200]
+    crop: '16:9'
+    media_crop:
+      medium: '3.2'
+      mobile: '1.1'
+    keep: attention
+    media_keep:
+      mobile: center
+    
