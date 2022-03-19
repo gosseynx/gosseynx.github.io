@@ -19,20 +19,24 @@ jobs:
           sudo apt-get install -y libvips42 libvips-dev libvips-tools
 
         # Essais fix "Could not open library 'glib-2.0.so.0'" :
-      - run: |
-          sudo apt-get install -y libglib2.0-0
+      # - run: |
+      #     sudo apt-get install -y libglib2.0-0
           
       # Install libjpeg libraries for Picture_tag
-      - run: |
-          sudo apt-get install -y libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev
+      # - run: |
+      #     sudo apt-get install -y libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev
 
       # Install libpng libraries for Pictute_tag
       - run: |
-          sudo apt-get install -y libpng16-16 libpng-dev libpng-tools
+          sudo apt-get install -y  libpng-tools #libpng16-16 libpng-dev
 
       # Install libwepb libraries for Picture_tag
+      # - run: |
+      #     sudo apt-get install -y libwebp6 libwebp-dev libwebpdemux2 libwebpmux3
+
+      # essais libffi
       - run: |
-          sudo apt-get install -y libwebp6 libwebp-dev libwebpdemux2 libwebpmux3
+          sudo apt-get install - y libffi-dev
 
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
