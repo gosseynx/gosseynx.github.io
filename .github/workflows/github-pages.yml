@@ -20,7 +20,7 @@ jobs:
       - name: Deploy
         uses: helaili/jekyll-action@v2
         with:
-          #target_branch: 'gh-pages'          
+          target_branch: 'gh-pages'          
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           pre_build_commands:  |
             apk --update add vips vips-tools
