@@ -9,22 +9,30 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository code
-        uses: actions/checkout@v2
-        
       - name: Install libvips libraries for Picture_tag
-        run: |
+         run: |
           sudo apt-get update
-          sudo apt-get install libvips42 libvips-dev libvips-tools
+          sudo apt-get install -y libvips42 libvips-dev libvips-tools
           
       - name: Install libjpeg libraries for Picture_tag
-        run: sudo apt-get install -y libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev
+        run: |
+          sudo apt-get install -y libjpeg-turbo8 libjpeg-turbo8-dev libjpeg8 libjpeg8-dev
 
       - name: Install libpng libraries for Pictute_tag
-        run: sudo apt-get install -y libpng16-16 libpng-dev libpng-tools
+        run: |
+          sudo apt-get install -y libpng16-16 libpng-dev libpng-tools
 
       - name: Install libwepb libraries for Picture_tag
-        run: sudo apt-get install -y libwebp6 libwebp-dev libwebpdemux2 libwebpmux3
+        run: |
+          sudo apt-get install -y libwebp6 libwebp-dev libwebpdemux2 libwebpmux3
+
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
         
       - name: Build Jekyll 
         uses: helaili/jekyll-action@v2
