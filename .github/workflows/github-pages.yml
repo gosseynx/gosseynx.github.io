@@ -9,10 +9,15 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
+      
       # Install libvips libraries for Picture_tag
       - run: |
           sudo apt-get update
           sudo apt-get install -y libvips42 libvips-dev libvips-tools
+
+        # Essais fix "Could not open library 'glib-2.0.so.0'" :
+      - run: |
+          sudo apt-get install -y libglib2.0-0
           
       # Install libjpeg libraries for Picture_tag
       - run: |
