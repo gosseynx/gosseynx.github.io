@@ -36,7 +36,7 @@ jobs:
 
       # essais libffi
       - run: |
-          sudo apt-get install - y libffi-dev
+          sudo apt-get install -y libffi-dev
 
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
