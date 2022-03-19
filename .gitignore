@@ -5,9 +5,6 @@
 # script de nettoyage :
 nettoie.sh
 
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
 
 # Ruby Gem
 *.gem
@@ -20,9 +17,6 @@ node_modules
 npm-debug.log*
 package-lock.json
 codekit-config.json
-
-# macOS
-.DS_Store
 
 # Jekyll generated files
 .jekyll-cache
