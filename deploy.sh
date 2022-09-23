@@ -7,7 +7,7 @@
 
 #########  script de déploiement automatique lancé par easy-jekyll ##########
 
-DATE1=$(date +%d/:m/%Y)
+DATE1=$(date +%d/:%m/%Y)
 DATE2=" à "
 DATE3=$(date +%H:%M) 
 DATE4=$DATE1$DATE2$DATE3

@@ -1,6 +1,10 @@
 source "https://rubygems.org"
 
+ruby "2.7.4"
+
 gem 'jekyll', '~> 4.2.2'
+gem 'faraday-retry', '~>2.0.0'
+
 group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-paginate"
