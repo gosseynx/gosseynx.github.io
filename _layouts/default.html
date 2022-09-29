@@ -37,6 +37,11 @@
     </div>
 
     {% include scripts.html %}
-
+    {% if page.title == "PGOSSEDEV" %}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  {% endif %}
   </body>
 </html>

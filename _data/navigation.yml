@@ -1,7 +1,9 @@
 # main links
 main:
-  - title: "Home"
-    url: /index.html
+  - title: Contact
+    url: /contact/
+  - title: "Blog"
+    url: /blog/index.html/
   - title: "Sites"
     url: /sites/
   - title: "CV"

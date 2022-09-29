@@ -2,6 +2,9 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+$global-transition: all 0.4s ease-in-out !default;
+$intro-transition: intro 0.5s both !default;
+
 @charset "utf-8";
 
 $serif: 'Libre Caslon Text', Times, serif;
@@ -14,3 +17,120 @@ $paragraph-indent: true;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+/* Animation pour la page de garde */
+
+@keyframes listmag {
+    0% {transform: translateX(-9999px);
+	opacity: 0;}
+    100% {transform: translateX(0);
+	  opacity: 1;}
+    animation-timing-function: cubic-bezier(.9, 0, .5, 1);
+}
+
+/* Ré écriture de la landing-page */
+/* avec custom classes */
+			    
+.page__hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    @include clearfix;
+    -webkit-animation: $intro-transition;
+    animation: $intro-transition;
+    -webkit-animation-delay: 0.25s;
+    animation-delay: 0.25s;
+    
+    &--overlay {
+	position: relative;
+	height: 80vh;
+	width: auto;
+	margin-bottom: 2em;
+	padding: 3em 0;
+	@include clearfix;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-animation: $intro-transition;
+	animation: $intro-transition;
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+	
+	/* &-image{ */
+	/*     height: 100%; */
+	/*     width: auto; */
+	/* } */
+	
+	a {
+	    color: #fff;
+	}
+	
+	.wrapper {
+	    padding-left: 1em;
+	    padding-right: 1em;
+	    
+	    @include breakpoint($x-large) {
+		max-width: $x-large;
+	    }
+	}
+	
+	.glassmorph {
+	    max-width: $medium;
+	    margin-top: 5em;
+	    padding: 1em;
+	    background: rgba(151, 128, 109, 0.25);
+	    box-shadow: 0 8px 32px 0 rgba(31, 38,135, 0.37);
+	    backdrop-filter: blur( 7px );
+	    -webkit-backdrop-filter: blur( 7px );
+	    border-radius: 10px;
+	    border: 1px solid rgba(255, 255, 255, 0.18);
+
+	    ul {
+		list-style-type: none;
+		color: #ffffff;
+		font-size: $type-size-4;
+		li {
+		    animation: listmag ease-in-out; 
+		    animation-duration: 2000ms;
+		    /*animation-delay: 10ms;*/
+		    &+li {
+			/* animation-name: listmag; */
+			/* animation-duration: 1000ms; */
+			animation-delay: 1s;
+			&+li {
+			/* animation-name: listmag; */
+			/* animation-duration: 1000ms; */
+			animation-delay: 2s;
+			}
+		    }
+		}
+	    }
+	}
+    }
+	
+    .page__title,
+    .page__meta,
+    .page__lead,
+    .btn {
+	color: #fff;
+	text-shadow: 1px 1px 4px rgba(#000, 0.5);
+    }
+    
+    .page__lead {
+	max-width: $medium;
+    }
+    
+    .page__title {
+	font-size: $type-size-2;
+	    
+	@include breakpoint($small) {
+	    font-size: $type-size-1;
+	}
+    }
+}
+.archive__item-teaser {
+    box-shadow: 2px 2px 3px 1px black;
+}
+

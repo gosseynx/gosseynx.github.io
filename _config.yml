@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "contrast"  #"default" # "air", "aqua", "contrast", "
 # Site Settings
 locale                   : "fr-FR"
 date_format              : "%-d %B %Y"
-title                    : "GSBlog"
+title                    : "PGOSSEDEV"
 title_separator          : "-"
 subtitle                 : # Science et Conscience
 name                     : "P. Gosse"
@@ -97,13 +97,13 @@ analytics:
 author:
   name             : "Pascal Gosse"
   avatar           : "/assets/images/moi160x160.jpg"
-  bio              : "Mathématiques, Linux, Programmation"
+  bio              : "Développeur web Freelance, Mathématiques, Linux"
   location         : "France"
   email            :
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:pascalgosse@orange.fr"
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: "mailto:pascalgosse@orange.fr"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://gosseynx.github.io"
@@ -213,8 +213,8 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+paginate_path: /blog/page:num/
+timezone: CEST UTC + 2 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:) ajouter katex ?
