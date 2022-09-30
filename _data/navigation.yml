@@ -3,7 +3,7 @@ main:
   - title: Contact
     url: /contact/
   - title: "Blog"
-    url: /blog/index.html/
+    url: /blog/index.html
   - title: "Sites"
     url: /sites/
   - title: "CV"
