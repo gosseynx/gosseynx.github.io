@@ -21,8 +21,8 @@ title                    : "PGOSSEDEV"
 title_separator          : "-"
 subtitle                 : # Science et Conscience
 name                     : "P. Gosse"
-description              : "Considérations mathématiques et autres."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : "PGOSSEDEV"
+url                      : https://gosseynx.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -211,7 +211,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /blog/:categories/:year/:month/:day/:title/ #/:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /blog/page:num/
 timezone: CEST UTC + 2 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
