@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "contrast"  #"default" # "air", "aqua", "contrast", "
 # Site Settings
 locale                   : "fr-FR"
 date_format              : "%-d %B %Y"
-title                    : "PGOSSEDEV"
+title                    : "Recueil"
 title_separator          : "-"
 subtitle                 : # Science et Conscience
 name                     : "P. Gosse"
-description              : "PGOSSEDEV"
+description              : "Mathématiques-Informatique etc"
 url                      : https://gosseynx.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

@@ -3,7 +3,11 @@ permalink: /sites/
 title: Conceptions WEB
 ---
 
-# Réalisations :
+# Activités de développement :
+
+## le site commercial de la société : ![Logo Ecce Web](/assets/images/logoEW2.png)
+<i class="fa-sharp fa-solid fa-code"></i> **Le site de la société** [*Ecce Web*](http://myprotest.atwebpages.com) sur lequel on trouvera _toutes mes réalisations, collaborations commerciales_ et offres afférentes.
+
 
 ## Réalisation de sites webs :
  

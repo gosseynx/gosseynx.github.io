@@ -1,66 +1,34 @@
 ---
-title: PGOSSEDEV
+title: Recueil
 layout: splash
 permalink: /
 sticky: true
 header:
-  overlay_image: /assets/images/fullsize/store-2790x1850.webp
-  overlay_color: "#97806D"
+  overlay_image: /assets/images/fullsize/future-full-size.webp
+  overlay_color: "#9B9B9B"
   overlay_filter: "0.3"
-  alt: "Photo by Mihály Köles on Unsplash"
+  alt: "Photo by dric on Pixabay"
   actions:
-    - label: "Consulter les offres"
-      url: "#les-différentes-prestations-proposées-"
-excerpt: "<ul><li>Sites vitrines.</li><li> Sites de vente en ligne.</li><li>Développement d'applications.</li></ul>"
+    - label: "Visite guidée"
+      url: "#visite-guidée-"
+excerpt: "<ul><li>Activités Numériques.</li><li> Considérations mathématiques/ informatiques.</li><li>Enseignement.</li></ul>"
 intro:
-  - excerpt: "<h1> Je suis un développeur web indépendant</h1><p>Passionné par le <strong>développement</strong> en général et par la <strong>programmation web</strong> en particulier, j'aime concevoir des sites et des solutions  numériques efficaces, depuis le design de l'interface jusqu'à leur mise en ligne.</p>"
+  - excerpt: "<h1>J'ai longtemps enseigné les mathématiques</h1><p>les bases de la programmation scientifique et de l'algorithmique. Passionné par l' <strong>informatique</strong> en général par la programmation scientifique et le  <strong>développement web</strong> en particulier, j'éprouve maintenant une grande satisfaction à concevoir, réaliser et mettre en ligne des solutions  numériques modernes et efficaces adaptées à des besoins spécifiques.</p>"
 row_1:
-    - image_path: /assets/images/wereopen-800x400.webp
-      alt: "Photo by Álvaro Serrano on Unsplash"
-      title: "Choisissez la souplesse et l'adaptabilité d'un développeur freelance !"
-      excerpt: "De nombreuses raisons plaident en faveur de cette solution : l'unicité de votre interlocuteur, des frais généraux réduits, un engagement personnel vis à vis des prescripteurs, la rapidité à adopter et mettre en oeuvre des solutions innovantes entre autres."
+    - image_path: /assets/images/CaptureEcceWebred.webp
+      alt: "Site Ecce Web"
+      title: "Mes activités de développement"
+      excerpt: "Mon site commercial de développement de sites vitrines et d'applications web : [Ecce Web](http://myprotest.atwebpages.com/). Tout savoir sur ce que je propose, mes réalisations etc."
 row_2:
-   - image_path: /assets/images/yesweareopen-800x533.webp
-     alt: "Photo by Artem Beliaikin on Unsplash"
-     title: "Des sites à la juste dimension de vos attentes."
-     excerpt: "Face à l'inflation et à la complexité des solutions toutes faites il y a le choix de la simplicité et de l'efficacité. Plus que jamais l'économie des moyens, la légèreté et l'ergonomie, sans pour autant négliger l'esthétique, rèstent les clés d'un **projet de qualité** répondant précisemment aux prescriptions.<br> Celles-ci sont de plus des critères de _visibilité_ pour les moteurs de recherche."
+   - image_path: /assets/images/trnava-university-polyhedrered.webp
+     alt: "Photo by trnava-university on Unsplash"
+     title: "Mathématiques et Informatique."
+     excerpt: "J'ai toujours été passionné par les mathématiques et les mondes fascinant auxquels ils donnent accès, pour peu que l'on veuille bien y consacrer temps et efforts. Leur fréquentation forme à la rigueur, à l'abstraction mais aussi  à l'imagination. <br/> Depuis quelques décennies, l'informatique (<i>les informatiques</i>) par le biais de la visualisation et de la représentation ou de l'invention de nouveau schémas de pensée a engagé avec elles un dialogue qui ouvre tant de nouveaux horizons que l'on serait bien en peine de juste les <i>effleurer tous</i>."
 row_3:
-    - image_path: /assets/images/open-800x533.webp
-      alt: "Photo by j on Unsplash "
-      title: " Le choix des technologies"
-      excerpt: "Pour tout type de demande il existe une grande variété d'outils et de moyens pour la satisfaire. Afin de trouver **la** solution optimale il est important de ne pas être enchaîné à l'une d'entre elles.<br> Là où elle est pertinente et économique la solution open-source sera privilégiée. Et le mode de conception adapté choisi. "
-gallery:
-    - url: /assets/images/bookstore-600x900.webp
-      image_path: /assets/images/bookstore-200x300.webp
-      alt: "Photo by Serge Kutuzov on Unsplash"
-    - url: /assets/images/restaurant-600x900.webp
-      image_path: /assets/images/restaurant-200x300.webp
-      alt: "Photo by Benjamin Zanatha on Unsplash"
-    - url: /assets/images/takeaway-600x900.webp
-      image_path: /assets/images/takeaway-200x300.webp
-      alt: "Photo by Clem Onojeghuo on Unsplash"
-feature_row:
-    - image_path: /assets/images/onfire-600x900.webp
-      alt: "Photo by Moritz Kindler on Unsplash"
-      title: "Site vitrine"
-      excerpt: "**A partir de 900 €**<br> Choix du CMS (Wordpress ou Jekyll)<br> Design en fonction de la charte graphique<br>Rédaction des contenus<br>Hébergement<br>"
-      url: /contact/
-      btn_label: "Demander un devis"
-      btn_class: btn--primary
-    - image_path: /assets/images/takeaway-600x900.webp
-      alt: "Photo by Clem nojeghuo on Unsplash"
-      title: "Site e-commerce"
-      excerpt: "**A partir de 1200 €**<br> Choix du CMS (Prestashop ou Shopify)<br> Design en fonction de la charte graphique<br>Administration et système de paiement<br>Hébergement<br>"
-      url: /contact/
-      btn_label: Demander un devis
-      btn_class: btn--primary
-    - image_path: /assets/images/application-600x900.webp
-      alt: "Photo by Tima Miroshnichenko on Pexels"
-      title: "Application"
-      excerpt: "**A partir de 2500 €**<br> Framework Ruby on Rails<br>Création des fonctionnalités <br>Contenus et design<br>Hébergement<br>"
-      url: /contact/
-      btn_label: Demander un devis
-      btn_class: btn--primary
+    - image_path: /assets/images/changbok-ko-classered.webp
+      alt: "Photo by changbok-ko on Unsplash "
+      title: " L'enseignement"
+      excerpt: "Enseigner, concevoir des cours et les exposer fut souvent un plaisir que j'espère avoir été, au moins par moments, communicatif.<br> De ces années restent des textes qui n'ont pas prétention à l'originalité mais qui peuvent être d'une aide certaine... au moins le temps que ces matières continuent d'être enseignées aux étudiants français."
 ---
 
 
@@ -73,15 +41,11 @@ feature_row:
 
 {% include feature_row id="row_3" type="left" %}
 
-# Les différentes prestations proposées :
+# Visite guidée :
 
-Chaque projet, qu'il s'agisse d'un désir d'être visible sur le web, d'y développer une activité commerciale prospère ou de concrétiser un concept innovant mérite une attention particulière et un investissement en moyens proportionné à ses exigences. 
+Dans le menu de navigation on trouvera les éléments nécessaires pour...naviguer dans ce <strong>recueil</strong>. Un formulaire de contact (si on le préfère à celui du site commercial)  pour obtenir des précisions ou formuler des demandes, le <strong>Blog</strong> lui-même avec ses quelques articles divers et variés, la rubrique <strong>Site</strong> qui fait écho à celle du site commercial en détaillaant le fonctionnement de l'appliction <strong>SciBook</strong>, une page où on pourra trouver mon curriculum vitae (<strong>CV</strong>), vieille habitude académique et enfin une page dédiée à quelques textes issus de ces années d'enseignement produits avec l'execellentissime LaTeX et au format pdf. 
 
-<!-- {% include gallery caption="Tous commerces" %} -->
-
-{% include feature_row %}
-
-# Maintenance
-Toutes les formules proposées sont également accompagnées d'un forfait maintenance comprenant les mises à jour techniques, les petites modifications de contenu et une sauvegarde périodique.
+# En construction
+Il va sans dire que ce site est en _perpétuelle_ construction...
 
 

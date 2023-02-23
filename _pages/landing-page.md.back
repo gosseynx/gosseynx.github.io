@@ -1,0 +1,29 @@
+---
+title: Blog
+layout: splash
+permalink: /
+sticky: true
+header:
+  overlay_image: /assets/images/fullsize/store-2790x1850.webp
+  overlay_color: "#97806D"
+  overlay_filter: "0.3"
+  alt: "Photo by Mihály Köles on Unsplash"
+  actions:
+    - label: "Au programme"
+      url: "#Visite du site-"
+excerpt: "<ul><li>Actualités mathématiques</li><li>Activités Numériques</li><li>Enseignement.</li></ul>"
+intro:
+  - excerpt: "<h1> J'ai lontemps enseigné les mathématiques, les bases de la programmation scientifique et de l'algorithmique</h1><p>Passionné par le <strong>l'informatique</strong> en général, la programmation scientifique et le <strong>développement web</strong> en particulier, j'éprouve maintenant une grande satisfaction à concevoir, réaliser et mettre en ligne des solutions numériques modernes et efficaces adaptées à des besoins spécifiques.</p>"
+
+---
+
+
+
+{%include feature_row id="intro" type="center"%}
+
+
+
+# Visite du site :
+
+ 
+

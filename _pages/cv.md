@@ -3,7 +3,7 @@ permalink: /cv/
 title: "Curriculum Vitae"
 ---
 
-#### Cliquer [ici](/assets/documents/cvpg.pdf) pour accéder à mon **CV** au format pdf. 
+#### Cliquer [ici](/assets/documents/cvPG2023.pdf) pour accéder à mon **CV** au format pdf. 
 
 #### On pourra également consulter [sur le site de Learn Enough](https://www.learnenough.com/certificates/gosseyn) les différentes formations web récentes que j'ai suivies. En résumé :
 
