@@ -43,7 +43,7 @@ row_3:
 
 # Visite guidée :
 
-Dans le menu de navigation on trouvera les éléments nécessaires pour...naviguer dans ce <strong>recueil</strong>. Un formulaire de contact (si on le préfère à celui du site commercial)  pour obtenir des précisions ou formuler des demandes, le <strong>Blog</strong> lui-même avec ses quelques articles divers et variés, la rubrique <strong>Site</strong> qui fait écho à celle du site commercial en détaillaant le fonctionnement de l'appliction <strong>SciBook</strong>, une page où on pourra trouver mon curriculum vitae (<strong>CV</strong>), vieille habitude académique et enfin une page dédiée à quelques textes issus de ces années d'enseignement produits avec l'execellentissime LaTeX et au format pdf. 
+Dans le menu de navigation on trouvera les éléments nécessaires pour...naviguer dans ce <strong>recueil</strong>. Un formulaire de contact (si on le préfère à celui du site commercial)  pour obtenir des précisions ou formuler des demandes, le <strong>Blog</strong> lui-même avec ses quelques articles divers et variés, la rubrique <strong>Site</strong> qui fait écho à celle du site commercial en détaillant le fonctionnement de l'appliction <strong>SciBook</strong>, une page où on pourra trouver mon curriculum vitae (<strong>CV</strong>), vieille habitude académique et enfin une page dédiée à quelques textes issus de ces années d'enseignement produits avec l'execellentissime LaTeX et au format pdf. 
 
 # En construction
 Il va sans dire que ce site est en _perpétuelle_ construction...

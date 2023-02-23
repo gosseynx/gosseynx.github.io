@@ -25,5 +25,7 @@ On touvera ici des textes concernant le cours d'analyse de seconde année. Ces s
 
 5. <i class="fas fa-book"></i>&nbsp; [Suites Numériques](/assets/documents/SyntheseSuitesNumeriques.pdf)
 
+### Exercices d'analyse seconde année de classe préparatoire intégrée ###
 
+1.  <i class="fas fa-book"></i>&nbsp; [Exercices d'intégration (corrigés)](/assets/documents/ExercicesIntegration.pdf)
 
