@@ -3,7 +3,9 @@ permalink: /cv/
 title: "Curriculum Vitae"
 ---
 
-#### Cliquer [ici](/assets/documents/cvPG2023.pdf) pour accéder à mon **CV** au format pdf. 
+#### Cliquer [ici](/assets/documents/cvPG2023.pdf) pour accéder à mon **CV** détaillé (académique) au format pdf. Si vous êtes pressés :
+
+#### Cliquer [ici](/assets/documents/cvpgnouv.pdf) pour accéder à mon **CV** actualisé, orienté développement et concis.
 
 #### On pourra également consulter [sur le site de Learn Enough](https://www.learnenough.com/certificates/gosseyn) les différentes formations web récentes que j'ai suivies. En résumé :
 
