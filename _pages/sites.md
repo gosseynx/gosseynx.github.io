@@ -21,21 +21,21 @@ title: Conceptions WEB
 La visite des quelques pages de présentation (la page d'arrivée, les différentes pages informatives) ne nécessite pas d'inscription préalable. pour aller plus loin, il faut se connecter (si l'on est déjà inscrit) ou s'inscrire via :
 
 #### La Connexion
-S'effectue en cliquant sur le bouton  &#171; ;Connexion &#187; et en s'identifiant si l'on est déjà inscrit ou en cliquant sur le bouton  &#171; ;Enregistrez-vous ! &#187; pour procéder à cette inscription. Pour cette dernière il suffit de fournir une adresse mail *valide*, en consulter la boite (après quelques instants) et cliquer sur le lien de validation qui se trouve dans le mail envoyé par l'application. C'est fait, on est inscrit sur le site !
+S'effectue en cliquant sur le bouton  &#171; Connexion &#187; et en s'identifiant si l'on est déjà inscrit ou en cliquant sur le bouton  &#171; Enregistrez-vous ! &#187; pour procéder à cette inscription. Pour cette dernière il suffit de fournir une adresse mail *valide*, en consulter la boite (après quelques instants) et cliquer sur le lien de validation qui se trouve dans le mail envoyé par l'application. C'est fait, on est inscrit sur le site !
 
 #### L'inscription effectuée
 Permet d'accéder directement à sa page personnelle créée automatiquement. Dans celle-ci un formulaire de recherche permettant d'interroger le fond à l'aide de mots-clés. On peut parcourir le catalogue pages par pages. Mais pour aller plus loin il est nécessaire de souscrire un : 
 
 #### Abonnement
-En cliquant sur les boutons  &#171; ;Abonnement &#187; de la page &#171; ;Home &#187; ou sur le lien  &#171; ;Tarifs &#187; situé en bas de chaque page, on arrive aux différents abonnements proposés (actifs ou inactifs suivant la situation du visiteur). En cliquant sur l'une des deux formules payantes on arrive sur une page expliquant ce qu'implique de cliquer sur le bouton  &#171; ;Payer &#187; et une fois celui-ci activé la redirection vers le site de paiement [Stripe](https://stripe.com.fr) s'effectue.
+En cliquant sur les boutons  &#171; Abonnement &#187; de la page &#171; Home &#187; ou sur le lien  &#171; Tarifs &#187; situé en bas de chaque page, on arrive aux différents abonnements proposés (actifs ou inactifs suivant la situation du visiteur). En cliquant sur l'une des deux formules payantes on arrive sur une page expliquant ce qu'implique de cliquer sur le bouton  &#171; Payer &#187; et une fois celui-ci activé la redirection vers le site de paiement [Stripe](https://stripe.com.fr) s'effectue.
 
 
 On peut alors fournir le  numéro de carte factice : 4242 4242 4242 4242 (les autres renseignements étant aléatoires même s'il vaut mieux fournir une date d'expiration correcte - dans le futur - et un nom correspondant à l'adresse mail d'inscription sous peine de voir son paiement rejeté) qui est validé (ou le numéro 4000 0000 0000 0002 si on veut vraiment échouer). Une fois le paiement accepté on est redirigé automatiquement  sur le site [*SciBook*](https://scibook.fly.dev) après quelques instants. 
 
 
-**NB :** La plupart des utilisateurs du site sont fictifs : on peut se connecter sous leur identité en entrant l'adresse mail : &#171; ;fakemail_n@monappli.org &#187; (où *n* varie de 1 à 50) et le mot de passe  &#171; ;password &#187; (Attention : la plupart de ces utilisateurs fictifs  *ne sont pas abonnés*). De ce fait la fonctionnalité consistant à recevoir un mail de confirmation de paiement *n'est pas activée* afin d'éviter une avalanche d'alertes concernant des adresses invalides.
+**NB :** La plupart des utilisateurs du site sont fictifs : on peut se connecter sous leur identité en entrant l'adresse mail : &#171; fakemail_n@monappli.org &#187; (où *n* varie de 1 à 50) et le mot de passe  &#171; password &#187; (Attention : la plupart de ces utilisateurs fictifs  *ne sont pas abonnés*). De ce fait la fonctionnalité consistant à recevoir un mail de confirmation de paiement *n'est pas activée* afin d'éviter une avalanche d'alertes concernant des adresses invalides.
 
-Une fois abonné le formulaire de recherche précédemment cité renvoie maintenant des liens vers les livres trouvés et on peut  cliquer sur &#171; ;Emprunter &#187; pour réserver ce livre pendant deux semaines et ce dans la limite de 5 emprunts simultanés. Les ouvrages empruntés sont automatiquement ajoutés à la page personnelle de l'utilisateur et y restent archivés même après la cessation de l'abonnement et son non renouvellement.
+Une fois abonné le formulaire de recherche précédemment cité renvoie maintenant des liens vers les livres trouvés et on peut  cliquer sur &#171; Emprunter &#187; pour réserver ce livre pendant deux semaines et ce dans la limite de 5 emprunts simultanés. Les ouvrages empruntés sont automatiquement ajoutés à la page personnelle de l'utilisateur et y restent archivés même après la cessation de l'abonnement et son non renouvellement.
 
 Il existe un compte administrateur qui peut être consulté uniquement sur demande pour des raisons évidentes de sécurité.
 
