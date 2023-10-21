@@ -18,7 +18,7 @@ row_1:
     - image_path: /assets/images/CaptureEcceWebred.webp
       alt: "Site Ecce Web"
       title: "Mes activités de développement"
-      excerpt: "Mon site commercial de développement de sites vitrines et d'applications web : [Ecce Web](http://myprotest.atwebpages.com/). Tout savoir sur ce que je propose, mes réalisations etc."
+      excerpt: "Mon site commercial de développement de sites vitrines et d'applications web : [Ecce Web](https://ecceweb.fr). Tout savoir sur ce que je propose, mes réalisations etc."
 row_2:
    - image_path: /assets/images/trnava-university-polyhedrered.webp
      alt: "Photo by trnava-university on Unsplash"
