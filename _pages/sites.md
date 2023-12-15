@@ -40,6 +40,7 @@ Une fois abonné le formulaire de recherche précédemment cité renvoie mainten
 Il existe un compte administrateur qui peut être consulté uniquement sur demande pour des raisons évidentes de sécurité.
 
 **Bonne visite !**
+&nbsp;  
 
 <i class="fa-solid fa-laptop-medical"></i> **L'application [*Psytest*](https://psytest-fcnj.onrender.com/)** : Une application de prise de rendez-vous pour les psychologues. Conçue pour trouver facilement une consultation auprès d'un thérapeute, elle permet au patient de s'inscrire (via un email vérifié) et de prendre  rendez-vous avec le psychologue de son choix directement dans l'agenda de ses disponibilités qui s'affiche alors automatiquement.
 
