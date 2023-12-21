@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  Mathématiques et Intelligence Artificielle
+title:  Mathématiques-Intelligence Artificielle
 date:   2023-12-21 15:25:05 +0200
 categories: Mathématiques
 tags: [Mathématiques, IA]
@@ -70,7 +70,7 @@ Le mot de la fin revient à l'un des mathématiciens à l'origine du projet, [Jo
 
 ## Références : ##
 
-1. L'article de Nature : https://www.nature.com/articles/d41586-023-04043-w
-2. La publication mathématique (preview) : https://www.nature.com/articles/s41586-023-06924-6
-3. Un post de Timothy Gowers sur le sujet : https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/
+1. [L'article Nature](https://www.nature.com/articles/d41586-023-04043-w)
+2. [La publication (preview)](https://www.nature.com/articles/s41586-023-06924-6)
+3. [Un post de Timothy Gowers](https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/)
 
