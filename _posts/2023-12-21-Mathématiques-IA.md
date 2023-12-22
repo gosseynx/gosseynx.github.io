@@ -74,5 +74,5 @@ Le mot de la fin revient à l'un des mathématiciens à l'origine du projet, [Jo
 
 1. <i class="fas fa-external-link-alt" aria-hidden="true"></i>  [L'article Nature](https://www.nature.com/articles/d41586-023-04043-w)
 2. <i class="fas fa-external-link-alt" aria-hidden="true"></i> [La publication (preview)](https://www.nature.com/articles/s41586-023-06924-6)
-3. <i class="fas fa-external-link-alt" aria-hidden="true"></i> Un post de Timothy Gowers](https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/)
+3. <i class="fas fa-external-link-alt" aria-hidden="true"></i> [Un post de Timothy Gowers](https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/)
 
