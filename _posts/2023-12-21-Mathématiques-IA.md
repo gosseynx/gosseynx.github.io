@@ -9,6 +9,8 @@ toc: true
 toc_label: "Contenu"
 ---
 
+{% picture chapelle_sixtine_detail.jpg --alt chapelle Sixtine détail %}
+
 # IA et Mathématiques #
 
 Lorsqu'il s'agit de rendre compte des avancées de l'intelligence artificielle, il convient d'être particulièrement attentif à ne pas sombrer dans les deux écueils symétriques mais aussi stériles l'un que l'autre  que constituent l'émerveillement béat et le catastrophisme apocalyptique.
