@@ -58,7 +58,7 @@ Il faut préciser qu'il s'agit là d'évaluations et non de la détermination  e
 ## L'avènement de l'IA ##
 
 En collaboration avec des chercheurs de l'université de Lyon et de l'université du Wisconsin l'équipe londonienne de Deepmind a donc utilisé l'IA pour tenter  d'avancer dans la recherche de solutions exactes à ce problème de la borne supérieure de la taille des sets chapeaux.  
-En élaborant un système d'intelligence artificielle appelé *FunSearch* pour créer automatiquement des requêtes à un LLM spécialisé, ceschercheurs ont réussi à faire produire à ce modèle de courts programmes informatiques fournissant des solutions à des problèmes mathématiques.  
+En élaborant un système d'intelligence artificielle appelé *FunSearch* pour créer automatiquement des requêtes à un LLM spécialisé, ces chercheurs ont réussi à faire produire à ce modèle de courts programmes informatiques fournissant des solutions à des problèmes mathématiques.  
 FunSearch vérifie ensuite la validité des solutions produites et les compare aux solutions connues jusqu'ici. Si la comparaison n'est pas en faveur des réponses générées, le système fournit un &#171;feedback&#187; au modèle afin de perfectionner la solution attendue à l'issue de l'itération suivante.  
 Non seulement le système a réussi à améliorer l'évaluation de la taille minimale de la collection garantissant l'apparition d'un set dans le cas de $$n=8$$ caractéristiques mais - plus important encore - il a matérialisé ce résultat dans une construction totalement originale et en utilisant un programme dont les étapes peuvent être analysées et comprises par ses utilisateurs, bien différemment donc des utilisations &#171;classiques&#187; de l'intelligence artificielle en tant que boîte noire.
 
@@ -74,5 +74,5 @@ Le mot de la fin revient à l'un des mathématiciens à l'origine du projet, [Jo
 
 1. <i class="fas fa-external-link-alt" aria-hidden="true"></i>  [L'article Nature](https://www.nature.com/articles/d41586-023-04043-w)
 2. <i class="fas fa-external-link-alt" aria-hidden="true"></i> [La publication (preview)](https://www.nature.com/articles/s41586-023-06924-6)
-3. <i class="fas fa-external-link-alt" aria-hidden="true"></i> [Un post de Timothy Gowers](https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/)
+3. <i class="fas fa-external-link-alt" aria-hidden="true"></i> Un post de Timothy Gowers](https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/)
 
