@@ -70,7 +70,7 @@ A l'inverse, dans le problème précédent, les clauses que doivent satisfaire l
 Pour autant cette approche originale ouvre de prometteuses perspectives dans la résolution de nombreux problèmes - pas uniquement dans le domaine des mathématiques mais aussi dans celui des applications pratiques - par le biais d'un nouveau paradigme de la coopération homme-machine. Une coopération et non une substitution.  
 Le mot de la fin revient à l'un des mathématiciens à l'origine du projet, [Jordan Ellenberg]((https://people.math.wisc.edu/~ellenberg/)) : &#171;Je ne cherche pas à l'utiliser (ce système) pour remplacer les mathématiciens humains mais comme un multiplicateur de force.&#187;
 
-## Références : ##
+## Références  ##
 
 1. [L'article Nature](https://www.nature.com/articles/d41586-023-04043-w)
 2. [La publication (preview)](https://www.nature.com/articles/s41586-023-06924-6)
