@@ -42,12 +42,13 @@ Il existe un compte administrateur qui peut être consulté uniquement sur deman
 **Bonne visite !**
 &nbsp;  
 
+
 <i class="fa-solid fa-laptop-medical"></i> **L'application [*Psytest*](https://psytest-fcnj.onrender.com/)** : Une application de prise de rendez-vous pour les psychologues. Conçue pour trouver facilement une consultation auprès d'un thérapeute, elle permet au patient de s'inscrire (via un email vérifié) et de prendre  rendez-vous avec le psychologue de son choix directement dans l'agenda de ses disponibilités qui s'affiche alors automatiquement.
 
 Le psychologue inscrit sur le site voit s'afficher sur sa page personnelle l'agenda de ses rendez-vous et peut à tout moment en consulter la page contenant les notes prises (ou à prendre) à cette occasion. Elle/Il a également la possibilité de faire apparaitre ces rendez vous dans son agenda Google.
 
 Bien sûr, les deux parties concernées peuvent annuler un rendez-vous à venir. 
 
-Le site est sécurisé et les accès en sont contrôlés suivant les rôles respectifs (psychologues/patients). 
+Le site est sécurisé et les accès en sont contrôlés suivant les rôles respectifs (psychologues/patients). Chaque patient est averti par un SMS  de sa prise de rendez-vous. 
 
-**NB :** La notification par sms sera très prochainement implémentée ainsi qu'une autre fonctionnalité &#171; surprise &#187; !
+ 
