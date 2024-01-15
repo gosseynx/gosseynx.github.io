@@ -10,7 +10,7 @@ main:
     url: /cv/
   - title: "Enseignements"
     url: /enseignements/
-  - title: "Registre"
-    url: /registre/
+  - titre: "Registre Jacques Gosse"
+    url: /registreJacquesGosse/
   # - title: "Sitemap"
   #   url: /sitemap/
