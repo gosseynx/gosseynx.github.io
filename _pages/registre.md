@@ -1,12 +1,12 @@
 ---
 layout: single
-#title: Registre
+title: Décès de Jacques Gosse 
 permalink: /registre/
 author_profile: false
 comments: true
+masthead: false
 ---
 
-# Décès de Jacques Gosse #
 
 {% picture JG.jpg --alt Jacques Gosse %}
 
