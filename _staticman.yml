@@ -1,0 +1,27 @@
+comments:
+  allowfields : ['name', 'email', 'url', 'message']
+  branch      : "master"
+  commitMessage : "Nouveau message de {fields.name}"
+  filename      : "comment-{@timestamp}"
+  format        : "yaml"
+  moderation    : true 
+  path          : "_data/comments/{options.slug}"
+  requireFields : ['name', 'email', 'message']
+  transforms: 
+    email: md5
+  generatedFields :
+    date:
+      type: date
+      options: 
+      format: iso8601
+  akismet:
+    enabled: true
+    author: name
+    authorEmail: email
+    authorUrl: url
+    content: message
+    type: comment
+  reCaptcha:
+    enabled: true
+    siteKey: 6LfYOFEpAAAAACntolnAFEmndWuHTdZ-J2RzPm4F
+    secret: MbKRHri3+Uc4HOXpyTeD8n/XFNwVU9Y2F8TZPJ48VuqHjMp6AidNSdgUtBa6x2FG2990Z0oU9fIIGPTUpCqkyJTuXYLsAfUM5GsTo3vYxwM7ux27ntL3jx5SVoGO0DsGju9fTzbPtNAPS9SoySIbyYV463I7znGkLuvtOClDdfRg5kVXY3STworCR4OW44TmZr02hg2q8lU5IBJEwDdeeGtFLtd068v7cPM3ynz2cnzu0uFFMIeYapNqeQ5Ak3RCllg5aXRhOJD7bAZ71KfX4pI5mol/KKxNqxgZbDV31o0PcUfCuQmRoLQYT1rRjlVza6ta4QXBnjaYFHAmgbcJIoiJZOLrHyknt6jjC0al4vpZl+jHGbvBqVPl7sjdE0RqcvZirUROL18HM6b+ivbWSG+9Crz++9fAVvatEdeFQRVYdS9VHfUNaxv7NQz8y4H1D/zfFbUnVWxonn9FozAFtY0hLPUrOJOEKz/O0dkz70Xj7SNx4Nby2PHXShVs8IZ9rtsq/CHJBAzu2VIxNtkHYiFy2wZfRfsH9gT1KPjTibjtx2hdkdF3oMXk40M45k3kGjIUfkpWXqR+mmZrfVtD0u/MiAe/b17gv73sioIzA4n7MXQ1UyQmXkB6lJ1du0f8EbcfwaBRqfyOB0Rg+dpKGq9zWC0l21hNrNrho1OlffU=

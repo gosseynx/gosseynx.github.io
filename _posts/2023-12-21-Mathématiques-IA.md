@@ -7,6 +7,8 @@ tags: [Mathématiques, IA]
 katex: true
 toc: true
 toc_label: "Contenu"
+toc_sticky: true
+comments: true
 ---
 
 {% picture chapelle_sixtine_detail.jpg --alt chapelle Sixtine détail %}
