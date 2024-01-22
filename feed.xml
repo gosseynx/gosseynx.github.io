@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://gosseynx.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gosseynx.github.io/" rel="alternate" type="text/html" /><updated>2024-01-22T04:09:46+00:00</updated><id>https://gosseynx.github.io/feed.xml</id><title type="html">Recueil</title><subtitle>Mathématiques-Informatique etc</subtitle><author><name>Pascal Gosse</name></author><entry><title type="html">staticman</title><link href="https://gosseynx.github.io/informatique/staticman/" rel="alternate" type="text/html" title="staticman" /><published>2024-01-21T14:22:09+00:00</published><updated>2024-01-21T14:22:09+00:00</updated><id>https://gosseynx.github.io/informatique/staticman</id><content type="html" xml:base="https://gosseynx.github.io/informatique/staticman/"><![CDATA[<h1 id="comments-for-static-sites">Comments for static sites</h1>
+
+<p><img src="/assets/images/generated/logostaticman-300-6d81c6ba0.png" alt="staticman logo" srcset="/assets/images/generated/logostaticman-300-6d81c6ba0.png 300w" /></p>
+
+<h2 id="staticman">staticman</h2>
+
+<p>I recently considered adding comments to my blog and after studying several alternatives (as <a href="https://disqus.com/">disqus</a> for instance) I decided to choose <a href="https://staticman.net">staticman</a> due to its open source nature and also because it keeps all the comments in your repository on GitHub and doesn’t save them on a distant third party private server.</p>
+
+<p>Staticman is a JavaScript application which takes care of the user submitted content and transforms it in data to be strored in a sub directory of the blog repo on GitHub through a pull request. This content must be accepted or is automagically rendered according to the value of a moderation option.</p>
+
+<p>I found the documentation confusing regarding the first steps of the installation and that’s the reason why I decided to make it more explicit.</p>
+
+<p><strong>N.B.</strong> Staticman needs a blog (or a static site) hosted by GitHub (on the GithHub pages like the one you read, GitLab or Netlify) in order to work properly. Moreover this post focuses on a Jekyll blog; hence you’ll have to adapt the settings if you use Hugo or another static site generator, but the process might be similar. I suppose that you’re familiar with both the command line and your shell. I use <em>Bash</em> .</p>
+
+<h2 id="building-a-new-instance">Building a new instance</h2>
+
+<p>To begin, one have to create a new GitHub account to fork the <a href="https://github.com/eduardoboucas/staticman">staticman repository</a> with a name reflecting its function (we’ll call it <em>bot-count</em>) and set a Personnel Access Token from this account (<em>Settings » Developer settings » PAT » Generate New Token</em>) without expiration date but with an expressive name (something like  «staticman PAT»). This PAT must have repos and user privileges in order to work and you have to write it down somewhere for later use.<br />
+Then back to the blog’s repository where we have to add the staticman count as a contributor with write access (<em>Settings » Manage Access » Add bot-count » Choose Role » write</em>). Once  this is done, we have to build an instance of the application on line for the collaboration to be granted. The documentation on the staticman site is not up to date and is about free tiers on Heroku which don’t exist anymore.</p>
+
+<p>I choosed the free offer of <a href="https://www.cyclic.sh/">cyclic.sh</a> where I had to log in with the staticman bot account (<em>bot-count</em>) on GitHub. The configuration was straightforward but there’s some variables that needed to be set as we shall see in the following. I called this instance fairly trivially <em>staticman.cyclic.app</em> (for this I had to set a subdomain to rename the app in the dashboard) but we’ll call it <em>staticman_instance</em> afterwards.</p>
+
+<ul>
+  <li>
+    <p>First we  clone locally the staticman repository previously cloned in our bot-count on GitHub : <code class="language-plaintext highlighter-rouge">git clone https://github.com/bot-count/staticman.git; cd staticman</code>. Then one must erase the <code class="language-plaintext highlighter-rouge">package-lock.json</code> and launch <code class="language-plaintext highlighter-rouge">npm install</code> to use it with a recent npm version. The staticman files are a bit outdated and we encountered a bunch of warnings at this stage. I had to issue a  <code class="language-plaintext highlighter-rouge">npm audit fix</code> command to supress some of them.</p>
+  </li>
+  <li>
+    <p>We generate an RSA keypair to encrypt all the information used by Staticman (emails, reCAPTCHA) with an empty passphrase :</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="go">ssh-keygen -m PEM -t rsa -b 4096 -C "staticman key" -f ~/.ssh/staticman_key</span></code></pre></figure>
+
+<ul>
+  <li>We create a file <code class="language-plaintext highlighter-rouge">Procfile</code> containing the line <code class="language-plaintext highlighter-rouge">web: npm start</code> in the repository’root.</li>
+  <li>Then, a file named <code class="language-plaintext highlighter-rouge">config.production.json</code>  at the same place :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '{
+   "githubToken": process.env.GITHUB_TOKEN,
+   "rsaPrivateKey": JSON.stringify(process.env.RSA_PRIVATE_KEY),
+   "port": process.env.PORT
+ }' &gt; config.production.json
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">process.env</code> syntax is for our production application to fetch these values saved on cyclic.sh.</p>
+<ul>
+  <li>Our configuration file <em>must not</em> be ignored by git so :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo -e "\n\!config.production.json" &gt;&gt; .gitignore
+</code></pre></div></div>
+<p>To deploy the application to cyclic.sh we add all the changes (<code class="language-plaintext highlighter-rouge">git add -A</code>), commit and push to GitHub our modified version of the repository. This triggers the application’s deployement on cyclic.sh</p>
+
+<p>On the cyclic.sh site we go to the dashboard of our application, on the «Variables» tab and we set the <code class="language-plaintext highlighter-rouge">GITHUB_TOKEN</code> one with the PAT generated previously on our bot-count. Then, we have to re write the RSA key  to dismiss the new lines characters :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat ~/.ssh/staticman_key | tr -d '\n' 
+</code></pre></div></div>
+
+<p>and copy the result (including <code class="language-plaintext highlighter-rouge">-----BEGIN RSA PRIVATE_KEY</code> and <code class="language-plaintext highlighter-rouge">END RSA PRIVATE KEY-----</code>) in a newly crafted variable named <code class="language-plaintext highlighter-rouge">RSA_PRIVATE_KEY</code>.</p>
+
+<p>For security sake and to reflect my <code class="language-plaintext highlighter-rouge">config.production.json</code> file (but I don’t know if it’s really necessary) I defined also a <code class="language-plaintext highlighter-rouge">PORT</code> variable and set it to 3000.</p>
+
+<p>After that we can manually trigger a new deploy to be sure that the app’s working. For checking purpose, connect to <em>https://staticman_instance.cyclic.app</em> and you should see  «Hello from Staticman version 3.0.0!» displayed.</p>
+
+<h2 id="collaborator-acceptance">Collaborator acceptance</h2>
+<p>Do you remember what we did on GitHub to declare the staticman bot as a contributor to our blog repository ? To finalize this point we have to issue a <em>GET</em> request to our staticman instance so in the adress bar of our browser, we write  : <em>https://staticman_instance.cyclic.app/v2/connect/your-user-name-on-github/your-blog-repository-on-github</em> and if all went well we will be rewarded by a simple  « OK! »</p>
+
+<h2 id="jekyll-configuration">Jekyll configuration</h2>
+
+<p>As I use the brilliant <a href="https://mmistakes.github.io/minimal-mistakes/">minimal mistakes</a> theme, I had to set up some details inside Jekyll and this theme’s particular configuration files.</p>
+
+<p>First, we place a <code class="language-plaintext highlighter-rouge">staticman.yml</code> in the root’s folder of the jekyll’s site with this settings :</p>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="go">comments:
+  allowedFields : ["name", "email", "message"]
+  branch        : "master"
+  commitMessage : "Nouveau commentaire de {fields.name}"
+  filename      : "comment-{@timestamp}"
+  format        : "yaml"
+  moderation    : true 
+  path          : "_data/comments/{options.slug}"
+  requiredFields : ["name", "email", "message"]
+  transforms: 
+    email: md5
+  generatedFields :
+    date:
+      type: date
+      options: 
+      format: iso8601
+  akismet:
+    enabled: true
+    author: name
+    authorEmail: email
+    authorUrl: url
+    content: message
+    type: comment
+  reCaptcha:
+    enabled: true
+</span><span class="gp">    siteKey: &lt;moderatly_long_key&gt;</span><span class="w">
+</span><span class="gp">    secret: &lt;very_long_key&gt;</span></code></pre></figure>
+
+<p>Note the  « moderation: true  » line.</p>
+
+<p>As we can see there’s an askimet and a reCAPTCHA keys involved. More on that later.<br />
+In the Jekyll’s general configuration file <code class="language-plaintext highlighter-rouge">_config.yml</code> we have to set the following :</p>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="c">...
+</span><span class="go">long_date_format         : "%d %B %Y à %H:%M"
+</span><span class="c">...
+</span><span class="go">comments:
+  provider               : "staticman_v2"
+  staticman:
+    branch               : "master"
+    endpoint             : "https://staticman_instance.cyclic.app/v2/entry/"
+reCaptcha:
+</span><span class="gp">  siteKey                : &lt;moderatly_long_key&gt;</span><span class="w">
+</span><span class="gp">  secret                 : &lt;very_long_key&gt;</span><span class="w">
+</span><span class="go">  theme                  : "light"
+</span><span class="c">  ...</span></code></pre></figure>
+
+<p>and that’s all for this file. You can notice here that I use staticman version 2 and not the version 3. It’s because I realised that the latest doesn’t work when we take the path of GitHub PAT but is tailored to <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">GitHub applications</a> and the use of webhooks.</p>
+
+<h2 id="spam-protection">spam protection</h2>
+<p>As we saw in the last section you better have to set up some basic spam protection when you allow comments on your pages. I won’t describe all the steps to add a reCAPTCHA to your site from your <a href="https://developers.google.com/">Google’s developper</a> account (the minimal mistakes theme allows only the reCAPTCHA version 2) or the way to subscribe to a free, non commercial <a href="https://akismet.com/">AKISMET</a> account.<br />
+In this post context you just have to know how to make your blog and your Staticman instance aware of these devices parameters (yes, we’re talking about  the previous <em>very_long_key</em> thing).</p>
+
+<p>Regarding Akismet You just have to create two more variables on the static.sh dashboard , <em>AKISMET_SITE</em>, <em>AKISMET_API_KEY</em> and set them respectively to your blog site and the API key given by Akismet.<br />
+The reCAPTCHA key obtained at the Google’s developer site must be encrypted with the RSA private key to produce our <em>very_long_key</em>. To do so, issue a get request to <em>https://staticman_instance/v2/encrypt/your-recaptcha-secret-key</em> and on the displayed page you’ll see this <em>very_long_key</em> that you have to declare in the two configuration files as described above.</p>
+
+<h2 id="displaying-comments">Displaying comments</h2>
+
+<p>To integrate comments and forms into the general design of the minimal mistakes theme we have to download the <a href="https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/comments.html"><code class="language-plaintext highlighter-rouge">_include/comments.html</code></a>, put it in its folder and make the following changes to the <code class="language-plaintext highlighter-rouge">_include/comment.html</code> file (to match the french way to diplay dates) :</p>
+<ul>
+  <li>at the very top of the file :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">long_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">long_date_format</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d %B,%Y à %H:%M"</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<ul>
+  <li>change the line number 7 to :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<ul>
+  <li>and the line number 16 to :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"> &lt;time datetime="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="p">}}</span>" itemprop="datePublished"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="nv">long_date_format</span><span class="w"> </span><span class="p">}}</span>&lt;/time&gt;</code></pre></figure>
+
+<p>It’s worth mentionning that the comments are disabled in development mode for Jekyll sites. If we want to experiment we have to :</p>
+
+<ul>
+  <li>prepend <code class="language-plaintext highlighter-rouge">JEKYLL_ENV=production</code> to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li>and put  «<code class="language-plaintext highlighter-rouge">comments: true</code> » in the front matter of the post at the end of which we wish to allow the users to write their comment.</li>
+</ul>
+
+<p>That’s all ! Happy commenting with staticman.</p>
+
+<h2 id="references">References</h2>
+<ol>
+  <li><a href="https://averagelinuxuser.com/staticman-comments/">The average Linux user</a></li>
+  <li><a href="https://nithiya.gitlab.io/post/staticman-jekyll-gitlab/">Setting up Staticman comments on my Jekyll GitLab page</a></li>
+  <li><a href="https://staticman.net/docs/">Staticman documentation</a></li>
+</ol>]]></content><author><name>Pascal Gosse</name></author><category term="Informatique" /><summary type="html"><![CDATA[Comments for static sites]]></summary></entry><entry><title type="html">La conjecture de Collatz</title><link href="https://gosseynx.github.io/Collatz/" rel="alternate" type="text/html" title="La conjecture de Collatz" /><published>2023-12-27T16:45:31+00:00</published><updated>2023-12-27T16:45:31+00:00</updated><id>https://gosseynx.github.io/Collatz</id><content type="html" xml:base="https://gosseynx.github.io/Collatz/"><![CDATA[<h1 id="de-la-dangerosité-des-conjectures-mathématiques">De la dangerosité des conjectures mathématiques</h1>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/094y1Z2wpJg" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h2 id="le-problème-de-collatz">Le problème de Collatz</h2>
+
+<p>Comme il est expliqué dans cette vidéo (en anglais), l’énoncé du problème de Collatz est très simple : A partir du choix d’un entier naturel \(n\) on applique la règle suivante : s’il est impair on le remplace par \(3n+1\)
+et s’il est pair on le divise par \(2\) (pour obtenir \(\frac{n}{2}\)). On s’intéresse à la suite des nombres obtenus par répétition (<em>itération</em>) de ce procédé élémentaire.</p>
+
+<p>La question (encore ouverte aujourd’hui) est : quelque soit le choix du nombre de départ, aboutit-on <em>toujours</em> au nombre \(1\) ?</p>]]></content><author><name>Pascal Gosse</name></author><category term="Mathématiques" /><summary type="html"><![CDATA[De la dangerosité des conjectures mathématiques]]></summary></entry><entry><title type="html">Mathématiques-Intelligence Artificielle</title><link href="https://gosseynx.github.io/math%C3%A9matiques/Math%C3%A9matiques-IA/" rel="alternate" type="text/html" title="Mathématiques-Intelligence Artificielle" /><published>2023-12-21T13:25:05+00:00</published><updated>2023-12-21T13:25:05+00:00</updated><id>https://gosseynx.github.io/math%C3%A9matiques/Math%C3%A9matiques-IA</id><content type="html" xml:base="https://gosseynx.github.io/math%C3%A9matiques/Math%C3%A9matiques-IA/"><![CDATA[<p><img src="/assets/images/generated/chapelle_sixtine_detail-800-de2909931.jpg" alt="chapelle Sixtine détail" srcset="/assets/images/generated/chapelle_sixtine_detail-400-de2909931.jpg 400w, /assets/images/generated/chapelle_sixtine_detail-600-de2909931.jpg 600w, /assets/images/generated/chapelle_sixtine_detail-800-de2909931.jpg 800w, /assets/images/generated/chapelle_sixtine_detail-1000-de2909931.jpg 1000w" /></p>
+
+<h1 id="ia-et-mathématiques">IA et Mathématiques</h1>
+
+<p>Lorsqu’il s’agit de rendre compte des avancées de l’intelligence artificielle, il convient d’être particulièrement attentif à ne pas sombrer dans les deux écueils symétriques mais aussi stériles l’un que l’autre  que constituent l’émerveillement béat et le catastrophisme apocalyptique.</p>
+
+<p>Ce qui suit relate l’émergence d’une collaboration inédite entre l’intelligence artificielle et l’homme, une collaboration exemplaire qui montre que l’intelligence artificielle n’a vocation à être ni un remplaçant ni un médiocre pis-aller mais un outil efficace  d’aide à la résolution de problèmes.</p>
+
+<h2 id="deepmind-londres-2023">Deepmind Londres 2023</h2>
+
+<p>Dans un <a href="(https://www.nature.com/articles/d41586-023-04043-w)">article de Nature</a> publié le 14 décembre de cette année, Bernardino Pomera-Paredes de l’équipe de Deepmind Londres expose comment l’utilisation combinée d’un «grand modèle de langage» (LLM) spécifiquement entraîné à la résolution de problèmes mathématiques et d’un programme «prescripteur» <em>FunSearch</em> a permis d’imaginer une méthode originale de collaboration homme-machine.</p>
+
+<h2 id="le-jeu-set">Le jeu <em>Set!</em></h2>
+
+<p>Inventé et commercialisé en 1974 par la généticienne britannique Marsha Falco le jeu Set! consiste en ensemble de 81 cartes représentant une, deux ou trois formes caractérisées par :</p>
+
+<ul>
+  <li>une couleur (rouge, violet ou turquoise)</li>
+  <li>une forme (ovale, losange ou vague)</li>
+  <li>un mode de remplissage (plein, vide ou hachuré)</li>
+</ul>
+
+<p>Le jeu comporte toutes les \(3^4 = 81\) (nombre de symboles \(\times\) nombre de formes \(\times\) couleurs possibles \(\times\) modes de remplissage) possibilités. Le but est d’identifier le plus rapidement possible l’apparition d’un triplé «spécial» appelé <em>set</em> formé par trois cartes dont les attributs sont soit tous les mêmes soit tous distincts :</p>
+
+<p><img src="/assets/images/generated/set-800-30f778090.webp" alt="le jeu Set!" srcset="/assets/images/generated/set-400-30f778090.webp 400w, /assets/images/generated/set-600-30f778090.webp 600w, /assets/images/generated/set-800-30f778090.webp 800w" /></p>
+
+<p>Par exemple sur l’image de couverture est représenté un tel set puisque</p>
+
+<ul>
+  <li>les trois couleurs sont différentes</li>
+  <li>les trois formes sont distinctes</li>
+  <li>le nombre de figures est différent pour chaque carte (2,1,3)</li>
+  <li>le mode de remplissage est le même (plein).</li>
+</ul>
+
+<p>Au début du jeu on commence par étaler quatre rangées de 3 cartes. Si aucune rangée ne contient de set on ajoute une nouvelle rangée et ainsi de suite jusqu’à ce qu’un set soit détecté par l’un des joueurs.</p>
+
+<h2 id="le-problème-mathématique">Le problème mathématique</h2>
+
+<p>L’objet de réflexion des mathématiciens est le suivant : peut-on calculer le plus grand nombre de cartes ne contenant aucun set ?</p>
+
+<p>Pour cet exemple particulier la réponse a été donnée par le mathématicien italien Giuseppe Pellegrino en 1971 : 20.<br />
+Mais le véritable intérêt <em>combinatoire</em> de ce problème est que l’on peut aisément augmenter le nombre d’attributs des cartes (en ajoutant d’autres images par exemple).  Ainsi pour tout ensemble de \(n\) caractéristiques on obtiendra un jeu de \(3^n\) cartes et, pour chacun de ces jeux, on se propose de déterminer les collections de cartes ne contenant aucun set - étrangement appelés «sets chapeaux» («cap sets») par les mathématiciens - puis la taille maximale d’une telle collection (ou en langage mathématique leur «borne supérieure»).</p>
+
+<p>On connaît la réponse à ces questions pour un nombre de caractéristiques allant jusqu’à 6. Mais qu’en est-il lorsqu’on envisage 100 ou 200 attributs  et que le nombre de combinaisons à envisager dépasse largement nos possibilités de calcul ? La question générale (et équivalente) de déterminer le nombre minimal de cartes garantissant l’apparition d’au moins un set reste donc ouverte et constitue par ailleurs l’une des plus simples formulations d’une classe beaucoup plus générale de problèmes combinatoires appelée «théorie de Ramsey» dont le but est d’étudier jusqu’à quel point une collection d’objets peut croître avant de voir émerger en son sein des motifs identifiables. Et c’est ce qui explique son importance : tout progrès dans sa résolution peut conduire à des découvertes importantes dans cette théorie (par exemple une conjecture classique de théorie des nombres cherche à déterminer la taille maximale d’un ensemble de nombres premiers ne contenant aucun triplé en progression arithmétique - dont la différence est constante).</p>
+
+<p>Originellement, suite à des publications de 1995 et 2012, on pensait que les sets chapeaux doivent avoir une taille inférieure à \(\frac{1}{n}\) fois la taille du jeu complet (\(20 \sim \frac{81}{4}\)), mais la résolution d’une question proche a permis d’établir en 2016 que la valeur de la borne supérieure décroît <em>exponentiellement</em> lorsque \(n\) augmente (à titre d’exemple l’estimation primitive la limitait à \(0.5\%\) pour 200 attributs alors que la nouvelle l’évalue à \(0.0000043\%\)).<br />
+Il faut préciser qu’il s’agit là d’évaluations et non de la détermination  exacte de telles collections.</p>
+
+<h2 id="lavènement-de-lia">L’avènement de l’IA</h2>
+
+<p>En collaboration avec des chercheurs de l’université de Lyon et de l’université du Wisconsin l’équipe londonienne de Deepmind a donc utilisé l’IA pour tenter  d’avancer dans la recherche de solutions exactes à ce problème de la borne supérieure de la taille des sets chapeaux.<br />
+En élaborant un système d’intelligence artificielle appelé <em>FunSearch</em> pour créer automatiquement des requêtes à un LLM spécialisé, ces chercheurs ont réussi à faire produire à ce modèle de courts programmes informatiques fournissant des solutions à des problèmes mathématiques.<br />
+FunSearch vérifie ensuite la validité des solutions produites et les compare aux solutions connues jusqu’ici. Si la comparaison n’est pas en faveur des réponses générées, le système fournit un «feedback» au modèle afin de perfectionner la solution attendue à l’issue de l’itération suivante.<br />
+Non seulement le système a réussi à améliorer l’évaluation de la taille minimale de la collection garantissant l’apparition d’un set dans le cas de \(n=8\) caractéristiques mais - plus important encore - il a matérialisé ce résultat dans une construction totalement originale et en utilisant un programme dont les étapes peuvent être analysées et comprises par ses utilisateurs, bien différemment donc des utilisations «classiques» de l’intelligence artificielle en tant que boîte noire.</p>
+
+<h2 id="quen-retenir-">Qu’en retenir ?</h2>
+
+<p>Il est important de souligner que la classe des problèmes susceptibles d’être soumis à ce système reste pour l’instant déterminée par quelques contraintes relativement indépassables comme un ensemble de résultats antérieurs perfectionnables, la possibilité d’évaluer efficacement d’éventuelles solutions ou avoir à sa disposition un embryon de solution dont une partie isolée peut être améliorée.<br />
+Le problème de la génération automatique de démonstrations de théorèmes, par exemple, sort complètement de ce cadre faute de pouvoir dans ce cas fournir au système un «signal de notation» <em>suffisamment riche</em>.<br />
+A l’inverse, dans le problème précédent, les clauses que doivent satisfaire les solutions sont parfaitement claires.
+Pour autant cette approche originale ouvre de prometteuses perspectives dans la résolution de nombreux problèmes - pas uniquement dans le domaine des mathématiques mais aussi dans celui des applications pratiques - par le biais d’un nouveau paradigme de la coopération homme-machine. Une coopération et non une substitution.<br />
+Le mot de la fin revient à l’un des mathématiciens à l’origine du projet, <a href="(https://people.math.wisc.edu/~ellenberg/)">Jordan Ellenberg</a> : «Je ne cherche pas à l’utiliser (ce système) pour remplacer les mathématiciens humains mais comme un multiplicateur de force.»</p>
+
+<h2 id="références">Références</h2>
+
+<ol>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i>  <a href="https://www.nature.com/articles/d41586-023-04043-w">L’article Nature</a></li>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i> <a href="https://www.nature.com/articles/s41586-023-06924-6">La publication (preview)</a></li>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i> <a href="https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/">Un post de Timothy Gowers</a></li>
+</ol>]]></content><author><name>Pascal Gosse</name></author><category term="Mathématiques" /><category term="Mathématiques" /><category term="IA" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Prix Abel 2022</title><link href="https://gosseynx.github.io/math%C3%A9matiques/PrixAbel2022/" rel="alternate" type="text/html" title="Prix Abel 2022" /><published>2022-04-01T17:25:05+00:00</published><updated>2022-04-01T17:25:05+00:00</updated><id>https://gosseynx.github.io/math%C3%A9matiques/PrixAbel2022</id><content type="html" xml:base="https://gosseynx.github.io/math%C3%A9matiques/PrixAbel2022/"><![CDATA[<h1 id="prix-abel-2022">Prix Abel 2022</h1>
+
+<p><img src="/assets/images/generated/dennis-sullivan-head-600-878313bf1.jpg" alt="Dennis Parnell Sullivan" srcset="/assets/images/generated/dennis-sullivan-head-400-878313bf1.jpg 400w, /assets/images/generated/dennis-sullivan-head-600-878313bf1.jpg 600w" /></p>
+
+<h2 id="les-prix-mathématiques">Les prix mathématiques</h2>
+
+<p>En<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> l’absence de prix Nobel dédié aux mathématiques, il existe non pas un mais  <em>deux</em> prix pour distinguer les auteurs de contributions exceptionnelles à cette discipline : la <a href="https://www.mathunion.org/imu-awards/fields-medal">Médaille Fields</a> décernée tous les quatre ans à un mathématicien de moins de quarante ans pour une contribution remarquable et le <a href="www.abelprisen.no">Prix Abel</a> attribué annuellement à un mathématicien sans considération d’âge afin de couronner une carrière exemplaire.</p>
+
+<p>Cette année 2022, le prix Abel vient d’être attribué au mathématicien américain exerçant à New-York <a href="https://www.math.stonybrook.edu/~dennis/">Dennis Parnell Sullivan</a>  pour ses contributions révolutionnaires à la topologie ainsi que pour ses capacités à élucider un large éventail de problèmes mathématiques en les observant à travers une loupe géométrique.</p>
+
+<h2 id="loriginalité-dune-démarche">L’originalité d’une démarche</h2>
+
+<h3 id="les-sciences-de-lespace">les sciences de l’espace</h3>
+
+<p>La topologie est une branche des mathématiques relativement jeune qui étudie les propriétés des «formes géométriques» et des «formes algèbriques» qui sont abstraites et générales (proximité, déformations, etc).</p>
+
+<p>La géométrie algébrique, de son côté, unit géométrie et algèbre dans le sens où elle explore les relations existant entre les figures géométriques d’une part et les équations qui les décrivent d’autre part. Par exemple, dans le plan où les points sont repérés par deux coordonnées \(x\) (l’abscisse, horizontale) et \(y\) (l’ordonnée,verticale) le cercle centré en l’origine \((0,0)\) et de rayon \(1\) est décrit par l’ensemble des points dont les coordonnées \((x,y)\) vérifient l’équation \(\;(E)\;\colon\; x^2 + y^2 =1\). Ce cercle est appelé la <em>variété algébrique</em> associée à l’équation \((E)\).</p>
+
+<p>Le grand avantage de la géométrie algébrique est qu’elle permet d’étudier les propriétés des objets géométriques (des variétés algébriques) à l’aide de calculs  effectués sur leurs équations (manipulations algébriques sur les polynômes par exemple). Mais l’inverse peut également se révéler fructueux. On peut déduire des propriétés de certaines équations à partir des propriétés géométriques des variétés algébriques qui leur sont naturellement associées (avec des applications en cryptographie au travers des <em>courbes elliptiques</em> ou encore en <a href="https://www.cambridge.org/core/journals/acta-numerica/article/topological-pattern-recognition-for-point-cloud-data/BB0DA0F0EBD79809C563AF80B555A23C">analyse de grands ensembles de données</a>)</p>
+
+<h3 id="jeter-des-ponts-entre-les-disciplines">Jeter des ponts entre les disciplines</h3>
+
+<p>Le mérite de D. Sullivan a consisté à constamment chercher à appliquer avec originalité les méthodes spécifiques à un domaine à un autre apparemment éloigné. Notamment des méthodes utilisées en géométrie algébrique à la topologie pour pouvoir calculer certaines propriétés des <em>variétés</em> (topologiques).</p>
+
+<p>Les variétés topologiques sont des espaces topologiques particuliers (et importants) qui semblent «plats»  lorsqu’on les regarde de près (ou qui localement ressemblent à un espace classique muni de coordonnées) mais qui, vus globalement, possèdent des propriétés plus complexes. La surface d’une sphère ou celle d’un tore sont des variétés de dimension \(2\) par exemple.</p>
+
+<p>La méthode pour étudier de telles formes consiste classiquement à leur associer des objets algébriques appelés <em>groupes d’homotopie</em> qui en capturent les propriétés fondamentales. Malheureusement ces groupes sont difficiles à manipuler et les calculs qu’ils permettent sont extrêmement complexes.</p>
+
+<p>En mathématiques, l’homotopie est une déformation continue entre deux applications, notamment celles qui décrivent  des chemins ou des lacets (chemins fermés ou boucles). Leur étude est fondamentale pour la détermination des propriétés des variétés (d’un seul tenant ou «à trous» par exemple).</p>
+
+<p><img src="/assets/images/Homotopy.gif" alt="!styled-image" title="Déformation continue d'un chemin" /></p>
+
+<p style="text-align*: center;font-size: 0.8em;">Déformation continue d’un chemin (crédit : Jim Belk).</p>
+
+<h3 id="lapport-de-dennis-sullivan">L’apport de Dennis Sullivan</h3>
+
+<p>A la fin des années 70 D. Sullivan a joué un rôle fondateur dans l’élaboration de la théorie de l’homotopie rationnelle qui va permettre de rendre les calculs sur ces groupes d’homotopie plus accessibles, en laissant de côté certaines de leurs caractéristiques et en les associant non plus à des entiers mais à des rationnels, après avoir approfondit une méthode consistant à reconstruire une variété à partir d’une autre de manière contrôlée (chirurgie). Cette voie novatrice le mènera à une classification complète des variétés d’un certain type en dimension supérieure ou égale à 5 et à une avancée significative dans une conjecture concernant le «découpage» de telles variétés en morceaux constitutifs triangulaires.</p>
+
+<p>Mais ce qui transparaît à travers ces travaux c’est bien la fascination profonde et essentielle qu’exerce sur D. Sullivan la nature première de l’espace et ce que l’on peut en découvrir en l’observant de différents points de vue : «Que signifie pour un espace d’avoir la structure d’une variété ?&amp;#187.</p>
+
+<p>En ce sens l’invention de ces techniques n’a constitué pour lui qu’une étape, un moyen de vérifier que la symétrie et d’autres propriétés de l’espace continuaient d’exister dans ce sens très local, divisé, dans le but de lui permettre d’atteindre des résultats encore plus généraux, qui, autrement, lui auraient échappés.</p>
+
+<h3 id="les-atomes-de-lespace">Les atomes de l’espace</h3>
+
+<p>Dans les années 80, Dennis Sullivan (qui entreprit des études de chimie avant de se réorienter vers les mathématiques) commença par adopter dans son étude des variétés ce qu’il a appelé un point de vue extérieur, plus global depuis lequel, par définition «la variété n’a pas réellement de personnalité locale, elle n’a pas de texture sur sa peau, pas de grain de beauté. Chaque lieu ressemble à n’importe quel autre…comme sur une flaque de lait.»</p>
+
+<p>Sa motivation étant néanmoins la découverte de cette personnalité locale de l’espace, il s’orienta ensuite vers l’étude des systèmes dynamiques : «Un système dynamique possède des textures différentes en des parties différentes de la variété. La dynamique relevait vraiment d’un monde nouveau.»</p>
+
+<p>Consacrés, comme leur nom l’indique, à l’étude  du mouvement, de l’évolution de systèmes au sein d’un espace (comme l’évolution d’une population soumise à des contraintes de ressources, le  modèle proie-prédateur ou bien encore la trajectoire d’un point du plan complexe soumis à l’action itérée de la fonction \(z\mapsto z^2 + 1\)) et dont certains exhibent un <em>comportement chaotique</em>, ils lui permirent de prouver une conjecture vieille de 60 ans (le problème de Julia-Fatou) sur la façon dont des points (et leur domaine environnant) de ce type de systèmes  finissent par revenir à leur position initiale au lieu de «vagabonder» indéfiniment.</p>
+
+<p>Pour prouver ce résultat (et d’autres encore dont un relié aux mathématiques sous-tendant une propriété universelle de certains systèmes dynamiques), il établit un rapport entre deux domaines auparavant séparés : l’étude des systèmes dynamiques générés par les itérations de fonctions et l’étude de certains groupes de symétries agissant sur une classe particulière d’espaces géométriques.</p>
+
+<p>Dans les premières années du vingt et unième siècle, Dennis Sullivan revint au point de vue extérieur de la topologie qui caractérisa les débuts de sa carrière et développa, en collaboration avec <a href="http://www.math.stonybrook.edu/~moira/">Moira Chas</a> une nouvelle méthode pour classer les variétés basée sur l’étude des chemins et lacets tracés sur leur surface.</p>
+
+<p>Depuis cette époque ses recherches ont encore accentué l’association étroite qu’il entrevoit entre les systèmes dynamiques et la topologie par l’interprétation topologique des équations décrivant l’écoulement des fluides.</p>
+
+<p>Comme le souligne <a href="http://hans.munthe-kaas.no/">Hans Munthe Kaas</a>, un mathématicien enseignant à l’université de Bergen en Norvège et membre du comité du Prix Abel : «Je ne suis pas certain que Dennis Sullivan concoive les frontières entre les différents domaines des mathématiques de la même façon que les autres les envisagent.»</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Librement inspiré de <a href="https://www.quantamagazine.org/dennis-sullivan-uniter-of-topology-and-chaos-wins-the-abel-prize-20220323/">Jordana Cepelewicz</a> ainsi que d’autres articles. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Pascal Gosse</name></author><category term="Mathématiques" /><summary type="html"><![CDATA[Prix Abel 2022]]></summary></entry><entry><title type="html">Le problème de Bâle</title><link href="https://gosseynx.github.io/math%C3%A9matiques/Basel/" rel="alternate" type="text/html" title="Le problème de Bâle" /><published>2021-09-20T07:12:34+00:00</published><updated>2021-09-20T09:01:03+00:00</updated><id>https://gosseynx.github.io/math%C3%A9matiques/Basel</id><content type="html" xml:base="https://gosseynx.github.io/math%C3%A9matiques/Basel/"><![CDATA[<h1 id="une-brillante-illustration-du-problème-de-bâle">Une brillante illustration du problème de Bâle</h1>
+
+<!-- Courtesy of embedresponsively.com //-->
+
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/d-o3eB9sfls" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h2 id="rappel-historique">Rappel historique</h2>
+
+<p>Le problème de Bâle (ou Basel Problem) a longtemps résisté aux mathématiciens. Il consiste à déterminer la somme de la série :</p>
+
+\[\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2}+ \dotsb \frac{1}{n^2} + \dotsb\]
+
+<p>Cette série converge lentement (pour obtenir \(4\) décimales exactes il faut calculer la somme de plus de \(15\,000\) des premiers termes) ce qui a rendu difficile l’identification de sa valeur exacte.</p>
+
+<p>C’est le mathématicien suisse <a href="https://fr.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> qui en donna la valeur (et une démonstration rigoureuse) en 1741. Celle-ci vaut</p>
+
+\[\frac{\pi^2}{6}\]
+
+<p>On peut remarquer que cette série est également reliée à <a href="/math%C3%A9matiques/HypotheseDeRiemann/">la fonction \(\zeta\) de Riemann</a> puisque</p>
+
+\[\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2}+ \dotsb \frac{1}{n^2} + \dotsb = \sum_{n=1}^{+\infty}\frac{1}{n^2}=\zeta(2)\]
+
+<p>Cette vidéo donne une interprétation géométrique de ce résultat.</p>
+
+<p>Pour débuter l’analogie physique, l’auteur imagine des sources lumineuses placées sur l’axe réel (ici des phares) aux point d’abscisse entière et un observateur situé à l’origine.</p>
+
+<p>La brillance totale perçue par l’observateur et générée par ce dispositif s’apparente à la somme \(\zeta(2)\) (la contribution de chaque source étant évaluée en termes de surface - en fait d’intersection d’un angle solide avec une surface représentant l’observateur et se développant dans la direction perpendiculaire à celle de propagation lumineuse - celle-ci est inversement proportionnelle au carré de la distance séparant source et observateur).</p>
+
+<p>Une fois l’analogie établie l’auteur invoque deux théorèmes géométriques (le théorème de Pythagore inverse et celui de l’angle inscrit) pour décomposer la brillance dûe à une unique source en un nombre croissant  d’autres placées à égale distance sur des cercles de rayons doublant sans cesse et approchant ainsi « idéalement » une droite.</p>]]></content><author><name>Pascal Gosse</name></author><category term="Mathématiques" /><summary type="html"><![CDATA[Une brillante illustration du problème de Bâle]]></summary></entry><entry><title type="html">Emacs easy-jekyll</title><link href="https://gosseynx.github.io/linux/Emacseasy-jekyll/" rel="alternate" type="text/html" title="Emacs easy-jekyll" /><published>2021-08-14T13:16:25+00:00</published><updated>2021-08-14T13:16:25+00:00</updated><id>https://gosseynx.github.io/linux/Emacseasy-jekyll</id><content type="html" xml:base="https://gosseynx.github.io/linux/Emacseasy-jekyll/"><![CDATA[<h2 id="blogger-avec-easy-jekyll-depuis-emacs">Blogger avec easy-jekyll depuis Emacs</h2>
+
+<p><img src="https://gosseynx.github.io/assets/images/emacsred-80.png" alt="alt" /></p>
+
+<p>Publier des articles avec <a href="https://www.gnu.org/software/emacs/">emacs</a> pour <a href="https://jekyllrb.com/">Jekyll</a> peut être à la fois simple et <em>entièrement automatisé</em> en utilisant le package <a href="https://github.com/masasam/emacs-easy-jekyll">easy-jekyll</a>.</p>
+
+<p>À une seule condition :  la configuration initiale de Jekyll recommande d’utiliser des gems Ruby sur une base locale et de les conserver sous le répertoire <code class="language-plaintext highlighter-rouge">~/gems/</code>.
+La conséquence est qu’Emacs ne trouvera pas le binaire <code class="language-plaintext highlighter-rouge">jekyll</code> à cet emplacement inhabituel.</p>
+
+<p>Une sournoise petite difficulté qui peut prendre du temps à être résolue puisque le package refusera de se lancer avec un laconique “jekyll is not installed”.</p>
+
+<p>Heureusement la solution est directe : il suffit d’indiquer à Emacs où trouver cet executable : dans le fichier d’initialisation <code class="language-plaintext highlighter-rouge">~/emacs.d/init.el</code> avant les quelques lignes de configuration requises décrites sur le site d’easy-jekyll (et qui dépendent des moyens de publication du blog) il faut placer :</p>
+
+<div class="language-lisp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">setenv</span> <span class="s">"PATH"</span> <span class="p">(</span><span class="nv">concat</span> <span class="p">(</span><span class="nv">getenv</span> <span class="s">"PATH"</span><span class="p">)</span> <span class="s">":~/gems/bin"</span><span class="p">))</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">exec-path</span> <span class="p">(</span><span class="nb">append</span> <span class="nv">exec-path</span> <span class="o">'</span><span class="p">(</span><span class="s">"~/gems/bin"</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>Une fois Emacs ouvert un simple  <code class="language-plaintext highlighter-rouge">M-X easy-jekyll</code> placera l’éditeur dans le répertoire local où sont stockés les différents posts  et affichera les commandes pour automatiser à la fois rédaction et publication !</p>]]></content><author><name>Pascal Gosse</name></author><category term="Linux" /><summary type="html"><![CDATA[Blogger avec easy-jekyll depuis Emacs]]></summary></entry><entry><title type="html">l’hypothèse de Riemann</title><link href="https://gosseynx.github.io/math%C3%A9matiques/HypotheseDeRiemann/" rel="alternate" type="text/html" title="l’hypothèse de Riemann" /><published>2021-05-22T00:00:00+00:00</published><updated>2021-05-22T00:00:00+00:00</updated><id>https://gosseynx.github.io/math%C3%A9matiques/HypotheseDeRiemann</id><content type="html" xml:base="https://gosseynx.github.io/math%C3%A9matiques/HypotheseDeRiemann/"><![CDATA[<h1 id="lhypothèse-de-riemann">L’hypothèse de Riemann</h1>
+
+<h2 id="les-problèmes-du-prix-du-millénaire">Les problèmes du Prix du Millénaire</h2>
+
+<p>L’institut pour les Mathématiques <a href="http://claymath.org">Clay (CMI)</a>, un institut scientifique privé britannique situé à Oxford a publié le 24 Mai 2004 une liste de sept problèmes mathématiques (assorti d’un prix d’un million de dollars pour la résolution de chacun d’eux) considérés comme hardus : les <em>Millenium Prize Problems</em>:</p>
+
+<ol>
+  <li>Le problème \(P=NP\).</li>
+  <li>La conjecture de Hodge</li>
+  <li>La conjecture de Poincaré (résolue)</li>
+  <li><strong>L’hypothèse de Riemann</strong></li>
+  <li>La résolution des équations de Yang-Mills</li>
+  <li>La conjecture de Birch et Swinnerton-Dyer</li>
+  <li>La solution générale des équations de Navier-Stockes</li>
+</ol>
+
+<p>Le seul de ces problèmes à être considéré comme résolu est la conjecture de Poincaré qui l’a été par le mathématicien russe Grigori Perelman en 2003. Il a reçu la médialle Fields pour sa démonstration en 2006. Bien que celle-ci ait été reconnue par l’institut Clay en 2010, Perelman a décliné le prix.</p>
+
+<h2 id="la-fonction-zeta-de-riemann">La fonction Zeta de Riemann</h2>
+
+<p>Le concept même de fonction est à la base de l’analyse enseignée dans le secondaire : il capture la mise en relation de deux grandeurs dont l’une, la <em>variable</em> a une progression connue (le temps par exemple) et une autre dont on étudie l’évolution par rapport à la première.</p>
+
+<p>La fonction \(\zeta\) de Riemann est définie par :</p>
+
+\[\zeta(s) = \sum_{n=1}^{+\infty}\frac{1}{n^s} = \frac{1}{1^s} + \frac{1}{2^s} + \frac{1}{3^s} + \dotsb\]
+
+<p>Cette fonction associe donc à un nombre réel \(s\) la somme de la série précédente dont on sait qu’elle ne converge (que le résultat de cette somme infinie est un nombre réel) que si \(s&gt;1\).</p>
+
+<p>Euler aux environs de 1730, dans le cadre de la résolution du <em>Problème de Basel</em>, à savoir démontrer l’égalité</p>
+
+\[\sum_{n=1}^{+\infty}\frac{1}{n^2}= \zeta(2) = \frac{\pi^2}{6}\]
+
+<p>a déterminé également une autre expression de la fonction \(\zeta\) de Riemann :</p>
+
+\[\zeta(s) = \prod_{p \text{ premier}}\frac{1}{1-p^{-s}}\]
+
+<p>(formule que l’on établit également à l’aide de considérations élémentaires en probabilités) où le produit est étendu à l’infinité de tous les nombres premiers \(p\).</p>
+
+<h2 id="lextension-du-domaine-de-définition">l’extension du domaine de définition</h2>
+
+<p>Définie au départ uniquement pour les nombres réels strictement supérieurs à \(1\), la fonction \(\zeta\) va s’étendre à un plus large ensemble de valeurs grâce à deux résultats.</p>
+
+<p>Le premier est la relation vérifiée par la fonction \(\eta\) de Dirichlet :</p>
+
+\[\biggl(1 - \frac{2}{2^s}\biggr) \zeta(s) = \eta(s) = \sum_{n=1}^{+\infty}\frac{(-1)^{n+1}}{n^s} \tag{1}\]
+
+<p>qui permet d’affirmer, comme la série de droite est alternée (et converge donc à condition que la suite \(\bigl(\frac{1}{n^s}\bigr)\) tende vers \(0\)) que la convergence est maintenant étendue à tous les réels positifs.</p>
+
+<p>Le second résultat consiste à étendre la fonction \(\zeta\) aux valeurs <em>complexes</em> de \(s\) (c’est à dire aux valeurs \(s = x + iy\) où \(x\) et \(y\) sont des réels) en recourant au <em>principe de prolongement analytique</em>.
+La fonction ainsi obtenue est <em>méromorphe</em> c’est à dire qu’elle est assez régulière pour être dérivée (par rapport à la variable complexe \(z\)) partout sur son domaine de définition <em>sauf sur un ensemble de points isolés</em> (les seuls dans une région les entourant en gros).
+Puisque la restriction d’un tel prolongement aux valeurs réelles doit redonner la fonction de départ, le prolongement en question n’est valable que si la partie réelle de \(s\) est stritement supériereure à \(1\). Mais la relation \((1)\) permet d’étendre encore cette définition à tous les complexes dont la partie réelle est strictement positive <em>excepté</em> les points où le terme en facteur s’annulle :</p>
+
+\[1 - \frac{2}{2^s} = 0 \Leftrightarrow s= 1 + \frac{2i\pi n}{\ln 2}\]
+
+<p>pour tout entier naturel non nul \(n\).</p>
+
+<p>En fait la fonction \(\zeta\) peut également être étendue à ces valeurs par l’intermédiare des limites en ces points sauf au point \(s=1\) (qui donne la série harmonique divergente).</p>
+
+<p>Dans la bande verticale comprise strictement entre \(x=0\) et \(x=1\) (tous les nombres complexes \(z = x+iy\) dont la partie réelle est strictement comprise entre \(0\) et \(1\)) la fonction \(zeta\) vérifie l’équation <em>fonctionnelle</em> (égalité vérifiée pour l’ensemble des valeurs que prend la fonction) :</p>
+
+\[\zeta(s) = 2^s \pi^{s-1}\sin \biggl(\frac{\pi s}{2}\biggr)\Gamma(1-s)\zeta(1-s) \tag{2}\]
+
+<p>où apparaît la fonction spéciale dite <em>Gamma d’Euler</em> qui est définie  pour tout nombre complexe \(z\) dont la partie réelle est strictement positive par :</p>
+
+\[\Gamma(z) = \int_0^{+\infty} t^{z-1}e^{-t} dt\]
+
+<p>La présence dans la relation \((2)\) des deux valeurs \(\zeta(s)\) et \(\zeta(1-s)\) permet enfin de prolonger encore le domaine de définition de la fonction \(\zeta\) à tous les autres nombres complexes \(s\) dont la partie réelle est négative, sauf pour \(s=0\) (qui fait ressurgir la <em>singularité</em> \(s=1\) dans le second membre) en égalant simplement \(\zeta(s)\) au membre de droite de \((2)\).</p>
+
+<h2 id="les-zéros-de-la-fonction-zeta">Les zéros de la fonction <em>zeta</em></h2>
+
+<p>Si l’on reprend la formule \((2)\) on constate que \(\zeta(s) = 0\)  lorsque \(s\) est un entier négatif puisqu’alors \(\sin \bigl(\frac{\pi s}{2}\bigr)=0\) (si \(s\) est un enrier pair positif les zéros de la fonction \(x \mapsto \sin x\) sont compensés par les <em>pôles</em> de la fonction \(\Gamma\) qui, elle, est calculée sur des valeurs entières <em>négatives</em> et la fonction \(\zeta\) ne s’annulle pas en ces points).</p>
+
+<p> <br />
+Ce sont les zéros <em>triviaux</em> de la fonction \(\zeta\).</p>
+
+<p> </p>
+
+<p>La valeur \(\zeta(0) = - \frac{1}{2}\) n’est pas obtenue à partir de l’équation \((2)\) mais en calulant \(\lim_{s\rightarrow 0}\zeta(s)\).</p>
+
+<p>L’équation fonctionnelle \((2)\) montre également que la fonction \(\zeta\) ne possède aucun zéro à partie réelle négative autre que ses zéros triviaux. Ainsi, tous les zéros non triviaux de \(\zeta\) résident dans la bande verticale du plan complexe délimitée par \(x=0\) et \(x=1\).</p>
+
+<p>L’hypothèse de Riemman est que <strong>tous</strong> les zéros non triviaux de la fonction \(\zeta\) sont situés exclusivement sur la droite d’équation \(x =\frac{1}{2}\) (et donc ont tous pour partie réelle \(\frac{1}{2}\)) appelée <em>la droite critique</em>.</p>
+
+<p>On effectue depuis des années de gigantesques calculs sur ordinateur pour essayer de vérifier cette hypothèse (en 2021 Platt&amp;Trudgian ont vérifié cette hypothèse sur \(12\, 363\, 153\, 437\, 138\) zéros !) sans avoir jusqu’à aujourd’hui réussi ni à démontrer cette conjecture vieille de 162 ans ni à trouver d’autres zéros dans cette bande <em>hors de la droite critique</em>.</p>
+
+<p>Enfin, il se trouve que cette hypothèse est reliée à beaucoup d’autres résultats mathématiques notamment d’importantes considérations concernant la répartition des nombres premiers dans l’ensemble de tous les nombres entiers.</p>
+
+<p>Plus précisemment le  théorème des nombres premiers donne une estimation du nombre de nombres premiers inférieurs à un réel \(x\) ( noté \(\pi(x)\)) : celui-ci  est équivalent, lorsque \(x\) tend vers l’infini à \(\frac{x}{\ln x}\) ce qui donne une estimation de la répartition <em>moyenne</em> des nombres premiers. L’hypothèse de Riemann porte sur la <em>déviation</em> par rapport à cette moyenne.</p>
+
+<p>On montre que l’estimation en question, lorsque \(x\) devient très grand  (le seul cas intéressant, sinon on <em>calcule</em> effectivement la valeur exacte de ce nombre !) vérifie la relation  :</p>
+
+\[\pi(x) = \int_0^x \frac{dt}{\ln t} + O(\sqrt{x}\ln x)\]
+
+<p>et toute avancée dans l’exploration de la région des zéros de la fonction \(zeta\) améliore le terme d’erreur du théorème des nombres premiers.</p>
+
+<p>Lorsque l’on sait l’importance des  nombres premiers dans les systèmes de cryptographie, on réalise que la résolution de ce problème pourrait bien valoir plus d’un million de dollars…</p>]]></content><author><name>Pascal Gosse</name></author><category term="Mathématiques" /><category term="Mathématiques" /><summary type="html"><![CDATA[L’hypothèse de Riemann]]></summary></entry></feed>

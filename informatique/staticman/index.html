@@ -1,0 +1,902 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="fr" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>staticman - Recueil</title>
+<meta name="description" content="Comments for static sites">
+
+
+  <meta name="author" content="Pascal Gosse">
+  
+  <meta property="article:author" content="Pascal Gosse">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Recueil">
+<meta property="og:title" content="staticman">
+<meta property="og:url" content="https://gosseynx.github.io/informatique/staticman/">
+
+
+  <meta property="og:description" content="Comments for static sites">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-21T14:22:09+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://gosseynx.github.io/informatique/staticman/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "P. Gosse",
+      "url": "https://gosseynx.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Recueil Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
+
+<!-- Katex -->
+
+    
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+      
+
+<div class="masthead" data-aos="fade-down">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Recueil &nbsp;<i class="fa-solid fa-pen-nib"></i>
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/contact/">Contact</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/index.html">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sites/">Sites</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/enseignements/">Enseignements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/registrejacquesgosse/"></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/moi160x160.jpg" alt="Pascal Gosse" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Pascal Gosse</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Développeur web Freelance, Mathématiques, Linux</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Contact</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">France</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://gosseynx.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="staticman">
+    <meta itemprop="description" content="Comments for static sites">
+    <meta itemprop="datePublished" content="2024-01-21T14:22:09+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">staticman
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Contenu</h4></header>
+              <ul class="toc__menu"><li><a href="#comments-for-static-sites">Comments for static sites</a><ul><li><a href="#staticman">staticman</a></li><li><a href="#building-a-new-instance">Building a new instance</a></li><li><a href="#collaborator-acceptance">Collaborator acceptance</a></li><li><a href="#jekyll-configuration">Jekyll configuration</a></li><li><a href="#spam-protection">spam protection</a></li><li><a href="#displaying-comments">Displaying comments</a></li><li><a href="#references">References</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="comments-for-static-sites">Comments for static sites</h1>
+
+<p><img src="/assets/images/generated/logostaticman-300-6d81c6ba0.png" alt="staticman logo" srcset="/assets/images/generated/logostaticman-300-6d81c6ba0.png 300w" /></p>
+
+<h2 id="staticman">staticman</h2>
+
+<p>I recently considered adding comments to my blog and after studying several alternatives (as <a href="https://disqus.com/">disqus</a> for instance) I decided to choose <a href="https://staticman.net">staticman</a> due to its open source nature and also because it keeps all the comments in your repository on GitHub and doesn’t save them on a distant third party private server.</p>
+
+<p>Staticman is a JavaScript application which takes care of the user submitted content and transforms it in data to be strored in a sub directory of the blog repo on GitHub through a pull request. This content must be accepted or is automagically rendered according to the value of a moderation option.</p>
+
+<p>I found the documentation confusing regarding the first steps of the installation and that’s the reason why I decided to make it more explicit.</p>
+
+<p><strong>N.B.</strong> Staticman needs a blog (or a static site) hosted by GitHub (on the GithHub pages like the one you read, GitLab or Netlify) in order to work properly. Moreover this post focuses on a Jekyll blog; hence you’ll have to adapt the settings if you use Hugo or another static site generator, but the process might be similar. I suppose that you’re familiar with both the command line and your shell. I use <em>Bash</em> .</p>
+
+<h2 id="building-a-new-instance">Building a new instance</h2>
+
+<p>To begin, one have to create a new GitHub account to fork the <a href="https://github.com/eduardoboucas/staticman">staticman repository</a> with a name reflecting its function (we’ll call it <em>bot-count</em>) and set a Personnel Access Token from this account (<em>Settings » Developer settings » PAT » Generate New Token</em>) without expiration date but with an expressive name (something like  «staticman PAT»). This PAT must have repos and user privileges in order to work and you have to write it down somewhere for later use.<br />
+Then back to the blog’s repository where we have to add the staticman count as a contributor with write access (<em>Settings » Manage Access » Add bot-count » Choose Role » write</em>). Once  this is done, we have to build an instance of the application on line for the collaboration to be granted. The documentation on the staticman site is not up to date and is about free tiers on Heroku which don’t exist anymore.</p>
+
+<p>I choosed the free offer of <a href="https://www.cyclic.sh/">cyclic.sh</a> where I had to log in with the staticman bot account (<em>bot-count</em>) on GitHub. The configuration was straightforward but there’s some variables that needed to be set as we shall see in the following. I called this instance fairly trivially <em>staticman.cyclic.app</em> (for this I had to set a subdomain to rename the app in the dashboard) but we’ll call it <em>staticman_instance</em> afterwards.</p>
+
+<ul>
+  <li>
+    <p>First we  clone locally the staticman repository previously cloned in our bot-count on GitHub : <code class="language-plaintext highlighter-rouge">git clone https://github.com/bot-count/staticman.git; cd staticman</code>. Then one must erase the <code class="language-plaintext highlighter-rouge">package-lock.json</code> and launch <code class="language-plaintext highlighter-rouge">npm install</code> to use it with a recent npm version. The staticman files are a bit outdated and we encountered a bunch of warnings at this stage. I had to issue a  <code class="language-plaintext highlighter-rouge">npm audit fix</code> command to supress some of them.</p>
+  </li>
+  <li>
+    <p>We generate an RSA keypair to encrypt all the information used by Staticman (emails, reCAPTCHA) with an empty passphrase :</p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="go">ssh-keygen -m PEM -t rsa -b 4096 -C "staticman key" -f ~/.ssh/staticman_key</span></code></pre></figure>
+
+<ul>
+  <li>We create a file <code class="language-plaintext highlighter-rouge">Procfile</code> containing the line <code class="language-plaintext highlighter-rouge">web: npm start</code> in the repository’root.</li>
+  <li>Then, a file named <code class="language-plaintext highlighter-rouge">config.production.json</code>  at the same place :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo '{
+   "githubToken": process.env.GITHUB_TOKEN,
+   "rsaPrivateKey": JSON.stringify(process.env.RSA_PRIVATE_KEY),
+   "port": process.env.PORT
+ }' &gt; config.production.json
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">process.env</code> syntax is for our production application to fetch these values saved on cyclic.sh.</p>
+<ul>
+  <li>Our configuration file <em>must not</em> be ignored by git so :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo -e "\n\!config.production.json" &gt;&gt; .gitignore
+</code></pre></div></div>
+<p>To deploy the application to cyclic.sh we add all the changes (<code class="language-plaintext highlighter-rouge">git add -A</code>), commit and push to GitHub our modified version of the repository. This triggers the application’s deployement on cyclic.sh</p>
+
+<p>On the cyclic.sh site we go to the dashboard of our application, on the «Variables» tab and we set the <code class="language-plaintext highlighter-rouge">GITHUB_TOKEN</code> one with the PAT generated previously on our bot-count. Then, we have to re write the RSA key  to dismiss the new lines characters :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat ~/.ssh/staticman_key | tr -d '\n' 
+</code></pre></div></div>
+
+<p>and copy the result (including <code class="language-plaintext highlighter-rouge">-----BEGIN RSA PRIVATE_KEY</code> and <code class="language-plaintext highlighter-rouge">END RSA PRIVATE KEY-----</code>) in a newly crafted variable named <code class="language-plaintext highlighter-rouge">RSA_PRIVATE_KEY</code>.</p>
+
+<p>For security sake and to reflect my <code class="language-plaintext highlighter-rouge">config.production.json</code> file (but I don’t know if it’s really necessary) I defined also a <code class="language-plaintext highlighter-rouge">PORT</code> variable and set it to 3000.</p>
+
+<p>After that we can manually trigger a new deploy to be sure that the app’s working. For checking purpose, connect to <em>https://staticman_instance.cyclic.app</em> and you should see  «Hello from Staticman version 3.0.0!» displayed.</p>
+
+<h2 id="collaborator-acceptance">Collaborator acceptance</h2>
+<p>Do you remember what we did on GitHub to declare the staticman bot as a contributor to our blog repository ? To finalize this point we have to issue a <em>GET</em> request to our staticman instance so in the adress bar of our browser, we write  : <em>https://staticman_instance.cyclic.app/v2/connect/your-user-name-on-github/your-blog-repository-on-github</em> and if all went well we will be rewarded by a simple  « OK! »</p>
+
+<h2 id="jekyll-configuration">Jekyll configuration</h2>
+
+<p>As I use the brilliant <a href="https://mmistakes.github.io/minimal-mistakes/">minimal mistakes</a> theme, I had to set up some details inside Jekyll and this theme’s particular configuration files.</p>
+
+<p>First, we place a <code class="language-plaintext highlighter-rouge">staticman.yml</code> in the root’s folder of the jekyll’s site with this settings :</p>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="go">comments:
+  allowedFields : ["name", "email", "message"]
+  branch        : "master"
+  commitMessage : "Nouveau commentaire de {fields.name}"
+  filename      : "comment-{@timestamp}"
+  format        : "yaml"
+  moderation    : true 
+  path          : "_data/comments/{options.slug}"
+  requiredFields : ["name", "email", "message"]
+  transforms: 
+    email: md5
+  generatedFields :
+    date:
+      type: date
+      options: 
+      format: iso8601
+  akismet:
+    enabled: true
+    author: name
+    authorEmail: email
+    authorUrl: url
+    content: message
+    type: comment
+  reCaptcha:
+    enabled: true
+</span><span class="gp">    siteKey: &lt;moderatly_long_key&gt;</span><span class="w">
+</span><span class="gp">    secret: &lt;very_long_key&gt;</span></code></pre></figure>
+
+<p>Note the  « moderation: true  » line.</p>
+
+<p>As we can see there’s an askimet and a reCAPTCHA keys involved. More on that later.<br />
+In the Jekyll’s general configuration file <code class="language-plaintext highlighter-rouge">_config.yml</code> we have to set the following :</p>
+
+<figure class="highlight"><pre><code class="language-shell_session" data-lang="shell_session"><span class="c">...
+</span><span class="go">long_date_format         : "%d %B %Y à %H:%M"
+</span><span class="c">...
+</span><span class="go">comments:
+  provider               : "staticman_v2"
+  staticman:
+    branch               : "master"
+    endpoint             : "https://staticman_instance.cyclic.app/v2/entry/"
+reCaptcha:
+</span><span class="gp">  siteKey                : &lt;moderatly_long_key&gt;</span><span class="w">
+</span><span class="gp">  secret                 : &lt;very_long_key&gt;</span><span class="w">
+</span><span class="go">  theme                  : "light"
+</span><span class="c">  ...</span></code></pre></figure>
+
+<p>and that’s all for this file. You can notice here that I use staticman version 2 and not the version 3. It’s because I realised that the latest doesn’t work when we take the path of GitHub PAT but is tailored to <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">GitHub applications</a> and the use of webhooks.</p>
+
+<h2 id="spam-protection">spam protection</h2>
+<p>As we saw in the last section you better have to set up some basic spam protection when you allow comments on your pages. I won’t describe all the steps to add a reCAPTCHA to your site from your <a href="https://developers.google.com/">Google’s developper</a> account (the minimal mistakes theme allows only the reCAPTCHA version 2) or the way to subscribe to a free, non commercial <a href="https://akismet.com/">AKISMET</a> account.<br />
+In this post context you just have to know how to make your blog and your Staticman instance aware of these devices parameters (yes, we’re talking about  the previous <em>very_long_key</em> thing).</p>
+
+<p>Regarding Akismet You just have to create two more variables on the static.sh dashboard , <em>AKISMET_SITE</em>, <em>AKISMET_API_KEY</em> and set them respectively to your blog site and the API key given by Akismet.<br />
+The reCAPTCHA key obtained at the Google’s developer site must be encrypted with the RSA private key to produce our <em>very_long_key</em>. To do so, issue a get request to <em>https://staticman_instance/v2/encrypt/your-recaptcha-secret-key</em> and on the displayed page you’ll see this <em>very_long_key</em> that you have to declare in the two configuration files as described above.</p>
+
+<h2 id="displaying-comments">Displaying comments</h2>
+
+<p>To integrate comments and forms into the general design of the minimal mistakes theme we have to download the <a href="https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/comments.html"><code class="language-plaintext highlighter-rouge">_include/comments.html</code></a>, put it in its folder and make the following changes to the <code class="language-plaintext highlighter-rouge">_include/comment.html</code> file (to match the french way to diplay dates) :</p>
+<ul>
+  <li>at the very top of the file :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">long_date_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">long_date_format</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"%-d %B,%Y à %H:%M"</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<ul>
+  <li>change the line number 7 to :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">empty</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">%}</span></code></pre></figure>
+
+<ul>
+  <li>and the line number 16 to :</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"> &lt;time datetime="<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="p">}}</span>" itemprop="datePublished"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">include</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="nv">long_date_format</span><span class="w"> </span><span class="p">}}</span>&lt;/time&gt;</code></pre></figure>
+
+<p>It’s worth mentionning that the comments are disabled in development mode for Jekyll sites. If we want to experiment we have to :</p>
+
+<ul>
+  <li>prepend <code class="language-plaintext highlighter-rouge">JEKYLL_ENV=production</code> to <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li>and put  «<code class="language-plaintext highlighter-rouge">comments: true</code> » in the front matter of the post at the end of which we wish to allow the users to write their comment.</li>
+</ul>
+
+<p>That’s all ! Happy commenting with staticman.</p>
+
+<h2 id="references">References</h2>
+<ol>
+  <li><a href="https://averagelinuxuser.com/staticman-comments/">The average Linux user</a></li>
+  <li><a href="https://nithiya.gitlab.io/post/staticman-jekyll-gitlab/">Setting up Staticman comments on my Jekyll GitLab page</a></li>
+  <li><a href="https://staticman.net/docs/">Staticman documentation</a></li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Catégories : </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#informatique" class="page__taxonomy-item" rel="tag">Informatique</a>
+    
+    </span>
+  </p>
+
+
+        
+
+
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Mis à jour :</strong> <time datetime="2024-01-21T14:22:09+00:00">21 Janvier 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Partager sur</h4>
+  
+
+  <!-- <a href="https://twitter.com/intent/tweet?text=staticman%20https%3A%2F%2Fgosseynx.github.io%2Finformatique%2Fstaticman%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> -->
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgosseynx.github.io%2Finformatique%2Fstaticman%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgosseynx.github.io%2Finformatique%2Fstaticman%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Collatz/" class="pagination--pager" title="La conjecture de Collatz
+">Précédent</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Suivant</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <section id="static-comments">
+        
+          <!-- Start static comments -->
+          <div class="js-comments">
+            
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">Laisser un message</h4>
+            <p class="small">Votre adresse email ne sera pas visible. Les champs obligatoires sont marqués <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://staticman.cyclic.app/v2/entry/gosseynx/gosseynx.github.io/master/comments">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Chargement...</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">Message <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">Markdown est supporté.</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">Nom <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">Adresse mail <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">Site web (optionnel)</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="staticman">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                <input type="hidden" name="options[reCaptcha][siteKey]" value="6LfYOFEpAAAAACntolnAFEmndWuHTdZ-J2RzPm4F">
+                <input type="hidden" name="options[reCaptcha][secret]" value="MbKRHri3+Uc4HOXpyTeD8n/XFNwVU9Y2F8TZPJ48VuqHjMp6AidNSdgUtBa6x2FG2990Z0oU9fIIGPTUpCqkyJTuXYLsAfUM5GsTo3vYxwM7ux27ntL3jx5SVoGO0DsGju9fTzbPtNAPS9SoySIbyYV463I7znGkLuvtOClDdfRg5kVXY3STworCR4OW44TmZr02hg2q8lU5IBJEwDdeeGtFLtd068v7cPM3ynz2cnzu0uFFMIeYapNqeQ5Ak3RCllg5aXRhOJD7bAZ71KfX4pI5mol/KKxNqxgZbDV31o0PcUfCuQmRoLQYT1rRjlVza6ta4QXBnjaYFHAmgbcJIoiJZOLrHyknt6jjC0al4vpZl+jHGbvBqVPl7sjdE0RqcvZirUROL18HM6b+ivbWSG+9Crz++9fAVvatEdeFQRVYdS9VHfUNaxv7NQz8y4H1D/zfFbUnVWxonn9FozAFtY0hLPUrOJOEKz/O0dkz70Xj7SNx4Nby2PHXShVs8IZ9rtsq/CHJBAzu2VIxNtkHYiFy2wZfRfsH9gT1KPjTibjtx2hdkdF3oMXk40M45k3kGjIUfkpWXqR+mmZrfVtD0u/MiAe/b17gv73sioIzA4n7MXQ1UyQmXkB6lJ1du0f8EbcfwaBRqfyOB0Rg+dpKGq9zWC0l21hNrNrho1OlffU=">
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="6LfYOFEpAAAAACntolnAFEmndWuHTdZ-J2RzPm4F"></div>
+                </div>
+              
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">Envoyer</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          <script async src="https://www.google.com/recaptcha/api.js"></script>
+        
+      </section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">Vous pourriez aimer aussi</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Collatz/" rel="permalink">La conjecture de Collatz
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          moins de 1 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">De la dangerosité des conjectures mathématiques
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/Math%C3%A9matiques-IA/" rel="permalink">Mathématiques-Intelligence Artificielle
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/PrixAbel2022/" rel="permalink">Prix Abel 2022
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Prix Abel 2022
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/Basel/" rel="permalink">Le problème de Bâle
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Une brillante illustration du problème de Bâle
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Contact</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Flux</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 P. Gosse. Propulsé par <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    (function ($) {
+    $('#new_comment').submit(function () {
+      var form = this;
+
+      $(form).addClass('disabled');
+      $('#comment-form-submit').html('<i class="fas fa-spinner fa-spin fa-fw"></i> Chargement...');
+
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+          $('#comment-form-submit').html('Envoyé');
+          $('.page__comments-form .js-notice').removeClass('notice--danger');
+          $('.page__comments-form .js-notice').addClass('notice--success');
+          showAlert('Merci pour votre message, il sera visible sur le site une fois approuvé.');
+        },
+        error: function (err) {
+          console.log(err);
+          $('#comment-form-submit').html('Envoyer');
+          $('.page__comments-form .js-notice').removeClass('notice--success');
+          $('.page__comments-form .js-notice').addClass('notice--danger');
+          showAlert('Désolé, une erreur est survenue lors de la soumission. Vérifiez que les champs obligatoires ont été remplis et réessayez.');
+          $(form).removeClass('disabled');
+        }
+      });
+
+      return false;
+    });
+
+    function showAlert(message) {
+      $('.page__comments-form .js-notice').removeClass('hidden');
+      $('.page__comments-form .js-notice-text').html(message);
+    }
+  })(jQuery);
+  </script>
+
+
+  
+
+
+
+
+    
+  </body>
+</html>

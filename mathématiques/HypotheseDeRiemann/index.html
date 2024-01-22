@@ -1,0 +1,750 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="fr" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>l’hypothèse de Riemann - Recueil</title>
+<meta name="description" content="L’hypothèse de Riemann">
+
+
+  <meta name="author" content="Pascal Gosse">
+  
+  <meta property="article:author" content="Pascal Gosse">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Recueil">
+<meta property="og:title" content="l’hypothèse de Riemann">
+<meta property="og:url" content="https://gosseynx.github.io/math%C3%A9matiques/HypotheseDeRiemann/">
+
+
+  <meta property="og:description" content="L’hypothèse de Riemann">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-22T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://gosseynx.github.io/math%C3%A9matiques/HypotheseDeRiemann/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "P. Gosse",
+      "url": "https://gosseynx.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Recueil Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
+
+<!-- Katex -->
+
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+<!-- <link rel="stylesheet" href="/assets/plugins/katex0.13.11/katex.min.css"> -->
+    
+    
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+      
+
+<div class="masthead" data-aos="fade-down">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Recueil &nbsp;<i class="fa-solid fa-pen-nib"></i>
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/contact/">Contact</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/index.html">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sites/">Sites</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/enseignements/">Enseignements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/registrejacquesgosse/"></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/moi160x160.jpg" alt="Pascal Gosse" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Pascal Gosse</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Développeur web Freelance, Mathématiques, Linux</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Contact</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">France</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://gosseynx.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="l’hypothèse de Riemann">
+    <meta itemprop="description" content="L’hypothèse de Riemann">
+    <meta itemprop="datePublished" content="2021-05-22T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">l’hypothèse de Riemann
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Contenu</h4></header>
+              <ul class="toc__menu"><li><a href="#lhypothèse-de-riemann">L’hypothèse de Riemann</a><ul><li><a href="#les-problèmes-du-prix-du-millénaire">Les problèmes du Prix du Millénaire</a></li><li><a href="#la-fonction-zeta-de-riemann">La fonction Zeta de Riemann</a></li><li><a href="#lextension-du-domaine-de-définition">l’extension du domaine de définition</a></li><li><a href="#les-zéros-de-la-fonction-zeta">Les zéros de la fonction zeta</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="lhypothèse-de-riemann">L’hypothèse de Riemann</h1>
+
+<h2 id="les-problèmes-du-prix-du-millénaire">Les problèmes du Prix du Millénaire</h2>
+
+<p>L’institut pour les Mathématiques <a href="http://claymath.org">Clay (CMI)</a>, un institut scientifique privé britannique situé à Oxford a publié le 24 Mai 2004 une liste de sept problèmes mathématiques (assorti d’un prix d’un million de dollars pour la résolution de chacun d’eux) considérés comme hardus : les <em>Millenium Prize Problems</em>:</p>
+
+<ol>
+  <li>Le problème \(P=NP\).</li>
+  <li>La conjecture de Hodge</li>
+  <li>La conjecture de Poincaré (résolue)</li>
+  <li><strong>L’hypothèse de Riemann</strong></li>
+  <li>La résolution des équations de Yang-Mills</li>
+  <li>La conjecture de Birch et Swinnerton-Dyer</li>
+  <li>La solution générale des équations de Navier-Stockes</li>
+</ol>
+
+<p>Le seul de ces problèmes à être considéré comme résolu est la conjecture de Poincaré qui l’a été par le mathématicien russe Grigori Perelman en 2003. Il a reçu la médialle Fields pour sa démonstration en 2006. Bien que celle-ci ait été reconnue par l’institut Clay en 2010, Perelman a décliné le prix.</p>
+
+<h2 id="la-fonction-zeta-de-riemann">La fonction Zeta de Riemann</h2>
+
+<p>Le concept même de fonction est à la base de l’analyse enseignée dans le secondaire : il capture la mise en relation de deux grandeurs dont l’une, la <em>variable</em> a une progression connue (le temps par exemple) et une autre dont on étudie l’évolution par rapport à la première.</p>
+
+<p>La fonction \(\zeta\) de Riemann est définie par :</p>
+
+\[\zeta(s) = \sum_{n=1}^{+\infty}\frac{1}{n^s} = \frac{1}{1^s} + \frac{1}{2^s} + \frac{1}{3^s} + \dotsb\]
+
+<p>Cette fonction associe donc à un nombre réel \(s\) la somme de la série précédente dont on sait qu’elle ne converge (que le résultat de cette somme infinie est un nombre réel) que si \(s&gt;1\).</p>
+
+<p>Euler aux environs de 1730, dans le cadre de la résolution du <em>Problème de Basel</em>, à savoir démontrer l’égalité</p>
+
+\[\sum_{n=1}^{+\infty}\frac{1}{n^2}= \zeta(2) = \frac{\pi^2}{6}\]
+
+<p>a déterminé également une autre expression de la fonction \(\zeta\) de Riemann :</p>
+
+\[\zeta(s) = \prod_{p \text{ premier}}\frac{1}{1-p^{-s}}\]
+
+<p>(formule que l’on établit également à l’aide de considérations élémentaires en probabilités) où le produit est étendu à l’infinité de tous les nombres premiers \(p\).</p>
+
+<h2 id="lextension-du-domaine-de-définition">l’extension du domaine de définition</h2>
+
+<p>Définie au départ uniquement pour les nombres réels strictement supérieurs à \(1\), la fonction \(\zeta\) va s’étendre à un plus large ensemble de valeurs grâce à deux résultats.</p>
+
+<p>Le premier est la relation vérifiée par la fonction \(\eta\) de Dirichlet :</p>
+
+\[\biggl(1 - \frac{2}{2^s}\biggr) \zeta(s) = \eta(s) = \sum_{n=1}^{+\infty}\frac{(-1)^{n+1}}{n^s} \tag{1}\]
+
+<p>qui permet d’affirmer, comme la série de droite est alternée (et converge donc à condition que la suite \(\bigl(\frac{1}{n^s}\bigr)\) tende vers \(0\)) que la convergence est maintenant étendue à tous les réels positifs.</p>
+
+<p>Le second résultat consiste à étendre la fonction \(\zeta\) aux valeurs <em>complexes</em> de \(s\) (c’est à dire aux valeurs \(s = x + iy\) où \(x\) et \(y\) sont des réels) en recourant au <em>principe de prolongement analytique</em>.
+La fonction ainsi obtenue est <em>méromorphe</em> c’est à dire qu’elle est assez régulière pour être dérivée (par rapport à la variable complexe \(z\)) partout sur son domaine de définition <em>sauf sur un ensemble de points isolés</em> (les seuls dans une région les entourant en gros).
+Puisque la restriction d’un tel prolongement aux valeurs réelles doit redonner la fonction de départ, le prolongement en question n’est valable que si la partie réelle de \(s\) est stritement supériereure à \(1\). Mais la relation \((1)\) permet d’étendre encore cette définition à tous les complexes dont la partie réelle est strictement positive <em>excepté</em> les points où le terme en facteur s’annulle :</p>
+
+\[1 - \frac{2}{2^s} = 0 \Leftrightarrow s= 1 + \frac{2i\pi n}{\ln 2}\]
+
+<p>pour tout entier naturel non nul \(n\).</p>
+
+<p>En fait la fonction \(\zeta\) peut également être étendue à ces valeurs par l’intermédiare des limites en ces points sauf au point \(s=1\) (qui donne la série harmonique divergente).</p>
+
+<p>Dans la bande verticale comprise strictement entre \(x=0\) et \(x=1\) (tous les nombres complexes \(z = x+iy\) dont la partie réelle est strictement comprise entre \(0\) et \(1\)) la fonction \(zeta\) vérifie l’équation <em>fonctionnelle</em> (égalité vérifiée pour l’ensemble des valeurs que prend la fonction) :</p>
+
+\[\zeta(s) = 2^s \pi^{s-1}\sin \biggl(\frac{\pi s}{2}\biggr)\Gamma(1-s)\zeta(1-s) \tag{2}\]
+
+<p>où apparaît la fonction spéciale dite <em>Gamma d’Euler</em> qui est définie  pour tout nombre complexe \(z\) dont la partie réelle est strictement positive par :</p>
+
+\[\Gamma(z) = \int_0^{+\infty} t^{z-1}e^{-t} dt\]
+
+<p>La présence dans la relation \((2)\) des deux valeurs \(\zeta(s)\) et \(\zeta(1-s)\) permet enfin de prolonger encore le domaine de définition de la fonction \(\zeta\) à tous les autres nombres complexes \(s\) dont la partie réelle est négative, sauf pour \(s=0\) (qui fait ressurgir la <em>singularité</em> \(s=1\) dans le second membre) en égalant simplement \(\zeta(s)\) au membre de droite de \((2)\).</p>
+
+<h2 id="les-zéros-de-la-fonction-zeta">Les zéros de la fonction <em>zeta</em></h2>
+
+<p>Si l’on reprend la formule \((2)\) on constate que \(\zeta(s) = 0\)  lorsque \(s\) est un entier négatif puisqu’alors \(\sin \bigl(\frac{\pi s}{2}\bigr)=0\) (si \(s\) est un enrier pair positif les zéros de la fonction \(x \mapsto \sin x\) sont compensés par les <em>pôles</em> de la fonction \(\Gamma\) qui, elle, est calculée sur des valeurs entières <em>négatives</em> et la fonction \(\zeta\) ne s’annulle pas en ces points).</p>
+
+<p> <br />
+Ce sont les zéros <em>triviaux</em> de la fonction \(\zeta\).</p>
+
+<p> </p>
+
+<p>La valeur \(\zeta(0) = - \frac{1}{2}\) n’est pas obtenue à partir de l’équation \((2)\) mais en calulant \(\lim_{s\rightarrow 0}\zeta(s)\).</p>
+
+<p>L’équation fonctionnelle \((2)\) montre également que la fonction \(\zeta\) ne possède aucun zéro à partie réelle négative autre que ses zéros triviaux. Ainsi, tous les zéros non triviaux de \(\zeta\) résident dans la bande verticale du plan complexe délimitée par \(x=0\) et \(x=1\).</p>
+
+<p>L’hypothèse de Riemman est que <strong>tous</strong> les zéros non triviaux de la fonction \(\zeta\) sont situés exclusivement sur la droite d’équation \(x =\frac{1}{2}\) (et donc ont tous pour partie réelle \(\frac{1}{2}\)) appelée <em>la droite critique</em>.</p>
+
+<p>On effectue depuis des années de gigantesques calculs sur ordinateur pour essayer de vérifier cette hypothèse (en 2021 Platt&amp;Trudgian ont vérifié cette hypothèse sur \(12\, 363\, 153\, 437\, 138\) zéros !) sans avoir jusqu’à aujourd’hui réussi ni à démontrer cette conjecture vieille de 162 ans ni à trouver d’autres zéros dans cette bande <em>hors de la droite critique</em>.</p>
+
+<p>Enfin, il se trouve que cette hypothèse est reliée à beaucoup d’autres résultats mathématiques notamment d’importantes considérations concernant la répartition des nombres premiers dans l’ensemble de tous les nombres entiers.</p>
+
+<p>Plus précisemment le  théorème des nombres premiers donne une estimation du nombre de nombres premiers inférieurs à un réel \(x\) ( noté \(\pi(x)\)) : celui-ci  est équivalent, lorsque \(x\) tend vers l’infini à \(\frac{x}{\ln x}\) ce qui donne une estimation de la répartition <em>moyenne</em> des nombres premiers. L’hypothèse de Riemann porte sur la <em>déviation</em> par rapport à cette moyenne.</p>
+
+<p>On montre que l’estimation en question, lorsque \(x\) devient très grand  (le seul cas intéressant, sinon on <em>calcule</em> effectivement la valeur exacte de ce nombre !) vérifie la relation  :</p>
+
+\[\pi(x) = \int_0^x \frac{dt}{\ln t} + O(\sqrt{x}\ln x)\]
+
+<p>et toute avancée dans l’exploration de la région des zéros de la fonction \(zeta\) améliore le terme d’erreur du théorème des nombres premiers.</p>
+
+<p>Lorsque l’on sait l’importance des  nombres premiers dans les systèmes de cryptographie, on réalise que la résolution de ce problème pourrait bien valoir plus d’un million de dollars…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags : </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#math%C3%A9matiques" class="page__taxonomy-item" rel="tag">Mathématiques</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Catégories : </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#math%C3%A9matiques" class="page__taxonomy-item" rel="tag">Mathématiques</a>
+    
+    </span>
+  </p>
+
+
+        
+
+
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Mis à jour :</strong> <time datetime="2021-05-22T00:00:00+00:00">22 Mai 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Partager sur</h4>
+  
+
+  <!-- <a href="https://twitter.com/intent/tweet?text=l%27hypoth%C3%A8se+de+Riemann%20https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FHypotheseDeRiemann%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> -->
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FHypotheseDeRiemann%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FHypotheseDeRiemann%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Précédent</a>
+    
+    
+      <a href="/linux/Emacseasy-jekyll/" class="pagination--pager" title="Emacs easy-jekyll
+">Suivant</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">Vous pourriez aimer aussi</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/informatique/staticman/" rel="permalink">staticman
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Comments for static sites
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Collatz/" rel="permalink">La conjecture de Collatz
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          moins de 1 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">De la dangerosité des conjectures mathématiques
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/Math%C3%A9matiques-IA/" rel="permalink">Mathématiques-Intelligence Artificielle
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/PrixAbel2022/" rel="permalink">Prix Abel 2022
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Prix Abel 2022
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Contact</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Flux</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 P. Gosse. Propulsé par <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>

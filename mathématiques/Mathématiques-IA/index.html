@@ -1,0 +1,841 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="fr" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Mathématiques-Intelligence Artificielle - Recueil</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Pascal Gosse">
+  
+  <meta property="article:author" content="Pascal Gosse">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Recueil">
+<meta property="og:title" content="Mathématiques-Intelligence Artificielle">
+<meta property="og:url" content="https://gosseynx.github.io/math%C3%A9matiques/Math%C3%A9matiques-IA/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-12-21T13:25:05+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://gosseynx.github.io/math%C3%A9matiques/Math%C3%A9matiques-IA/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "P. Gosse",
+      "url": "https://gosseynx.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Recueil Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
+
+<!-- Katex -->
+
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+<!-- <link rel="stylesheet" href="/assets/plugins/katex0.13.11/katex.min.css"> -->
+    
+    
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+      
+
+<div class="masthead" data-aos="fade-down">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Recueil &nbsp;<i class="fa-solid fa-pen-nib"></i>
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/contact/">Contact</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/index.html">Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/sites/">Sites</a>
+            </li><li class="masthead__menu-item">
+              <a href="/cv/">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/enseignements/">Enseignements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/registrejacquesgosse/"></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/moi160x160.jpg" alt="Pascal Gosse" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Pascal Gosse</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Développeur web Freelance, Mathématiques, Linux</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Contact</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">France</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://gosseynx.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Mathématiques-Intelligence Artificielle">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-12-21T13:25:05+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Mathématiques-Intelligence Artificielle
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Contenu</h4></header>
+              <ul class="toc__menu"><li><a href="#ia-et-mathématiques">IA et Mathématiques</a><ul><li><a href="#deepmind-londres-2023">Deepmind Londres 2023</a></li><li><a href="#le-jeu-set">Le jeu Set!</a></li><li><a href="#le-problème-mathématique">Le problème mathématique</a></li><li><a href="#lavènement-de-lia">L’avènement de l’IA</a></li><li><a href="#quen-retenir-">Qu’en retenir ?</a></li><li><a href="#références">Références</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><img src="/assets/images/generated/chapelle_sixtine_detail-800-de2909931.jpg" alt="chapelle Sixtine détail" srcset="/assets/images/generated/chapelle_sixtine_detail-400-de2909931.jpg 400w, /assets/images/generated/chapelle_sixtine_detail-600-de2909931.jpg 600w, /assets/images/generated/chapelle_sixtine_detail-800-de2909931.jpg 800w, /assets/images/generated/chapelle_sixtine_detail-1000-de2909931.jpg 1000w" /></p>
+
+<h1 id="ia-et-mathématiques">IA et Mathématiques</h1>
+
+<p>Lorsqu’il s’agit de rendre compte des avancées de l’intelligence artificielle, il convient d’être particulièrement attentif à ne pas sombrer dans les deux écueils symétriques mais aussi stériles l’un que l’autre  que constituent l’émerveillement béat et le catastrophisme apocalyptique.</p>
+
+<p>Ce qui suit relate l’émergence d’une collaboration inédite entre l’intelligence artificielle et l’homme, une collaboration exemplaire qui montre que l’intelligence artificielle n’a vocation à être ni un remplaçant ni un médiocre pis-aller mais un outil efficace  d’aide à la résolution de problèmes.</p>
+
+<h2 id="deepmind-londres-2023">Deepmind Londres 2023</h2>
+
+<p>Dans un <a href="(https://www.nature.com/articles/d41586-023-04043-w)">article de Nature</a> publié le 14 décembre de cette année, Bernardino Pomera-Paredes de l’équipe de Deepmind Londres expose comment l’utilisation combinée d’un «grand modèle de langage» (LLM) spécifiquement entraîné à la résolution de problèmes mathématiques et d’un programme «prescripteur» <em>FunSearch</em> a permis d’imaginer une méthode originale de collaboration homme-machine.</p>
+
+<h2 id="le-jeu-set">Le jeu <em>Set!</em></h2>
+
+<p>Inventé et commercialisé en 1974 par la généticienne britannique Marsha Falco le jeu Set! consiste en ensemble de 81 cartes représentant une, deux ou trois formes caractérisées par :</p>
+
+<ul>
+  <li>une couleur (rouge, violet ou turquoise)</li>
+  <li>une forme (ovale, losange ou vague)</li>
+  <li>un mode de remplissage (plein, vide ou hachuré)</li>
+</ul>
+
+<p>Le jeu comporte toutes les \(3^4 = 81\) (nombre de symboles \(\times\) nombre de formes \(\times\) couleurs possibles \(\times\) modes de remplissage) possibilités. Le but est d’identifier le plus rapidement possible l’apparition d’un triplé «spécial» appelé <em>set</em> formé par trois cartes dont les attributs sont soit tous les mêmes soit tous distincts :</p>
+
+<p><img src="/assets/images/generated/set-800-30f778090.webp" alt="le jeu Set!" srcset="/assets/images/generated/set-400-30f778090.webp 400w, /assets/images/generated/set-600-30f778090.webp 600w, /assets/images/generated/set-800-30f778090.webp 800w" /></p>
+
+<p>Par exemple sur l’image de couverture est représenté un tel set puisque</p>
+
+<ul>
+  <li>les trois couleurs sont différentes</li>
+  <li>les trois formes sont distinctes</li>
+  <li>le nombre de figures est différent pour chaque carte (2,1,3)</li>
+  <li>le mode de remplissage est le même (plein).</li>
+</ul>
+
+<p>Au début du jeu on commence par étaler quatre rangées de 3 cartes. Si aucune rangée ne contient de set on ajoute une nouvelle rangée et ainsi de suite jusqu’à ce qu’un set soit détecté par l’un des joueurs.</p>
+
+<h2 id="le-problème-mathématique">Le problème mathématique</h2>
+
+<p>L’objet de réflexion des mathématiciens est le suivant : peut-on calculer le plus grand nombre de cartes ne contenant aucun set ?</p>
+
+<p>Pour cet exemple particulier la réponse a été donnée par le mathématicien italien Giuseppe Pellegrino en 1971 : 20.<br />
+Mais le véritable intérêt <em>combinatoire</em> de ce problème est que l’on peut aisément augmenter le nombre d’attributs des cartes (en ajoutant d’autres images par exemple).  Ainsi pour tout ensemble de \(n\) caractéristiques on obtiendra un jeu de \(3^n\) cartes et, pour chacun de ces jeux, on se propose de déterminer les collections de cartes ne contenant aucun set - étrangement appelés «sets chapeaux» («cap sets») par les mathématiciens - puis la taille maximale d’une telle collection (ou en langage mathématique leur «borne supérieure»).</p>
+
+<p>On connaît la réponse à ces questions pour un nombre de caractéristiques allant jusqu’à 6. Mais qu’en est-il lorsqu’on envisage 100 ou 200 attributs  et que le nombre de combinaisons à envisager dépasse largement nos possibilités de calcul ? La question générale (et équivalente) de déterminer le nombre minimal de cartes garantissant l’apparition d’au moins un set reste donc ouverte et constitue par ailleurs l’une des plus simples formulations d’une classe beaucoup plus générale de problèmes combinatoires appelée «théorie de Ramsey» dont le but est d’étudier jusqu’à quel point une collection d’objets peut croître avant de voir émerger en son sein des motifs identifiables. Et c’est ce qui explique son importance : tout progrès dans sa résolution peut conduire à des découvertes importantes dans cette théorie (par exemple une conjecture classique de théorie des nombres cherche à déterminer la taille maximale d’un ensemble de nombres premiers ne contenant aucun triplé en progression arithmétique - dont la différence est constante).</p>
+
+<p>Originellement, suite à des publications de 1995 et 2012, on pensait que les sets chapeaux doivent avoir une taille inférieure à \(\frac{1}{n}\) fois la taille du jeu complet (\(20 \sim \frac{81}{4}\)), mais la résolution d’une question proche a permis d’établir en 2016 que la valeur de la borne supérieure décroît <em>exponentiellement</em> lorsque \(n\) augmente (à titre d’exemple l’estimation primitive la limitait à \(0.5\%\) pour 200 attributs alors que la nouvelle l’évalue à \(0.0000043\%\)).<br />
+Il faut préciser qu’il s’agit là d’évaluations et non de la détermination  exacte de telles collections.</p>
+
+<h2 id="lavènement-de-lia">L’avènement de l’IA</h2>
+
+<p>En collaboration avec des chercheurs de l’université de Lyon et de l’université du Wisconsin l’équipe londonienne de Deepmind a donc utilisé l’IA pour tenter  d’avancer dans la recherche de solutions exactes à ce problème de la borne supérieure de la taille des sets chapeaux.<br />
+En élaborant un système d’intelligence artificielle appelé <em>FunSearch</em> pour créer automatiquement des requêtes à un LLM spécialisé, ces chercheurs ont réussi à faire produire à ce modèle de courts programmes informatiques fournissant des solutions à des problèmes mathématiques.<br />
+FunSearch vérifie ensuite la validité des solutions produites et les compare aux solutions connues jusqu’ici. Si la comparaison n’est pas en faveur des réponses générées, le système fournit un «feedback» au modèle afin de perfectionner la solution attendue à l’issue de l’itération suivante.<br />
+Non seulement le système a réussi à améliorer l’évaluation de la taille minimale de la collection garantissant l’apparition d’un set dans le cas de \(n=8\) caractéristiques mais - plus important encore - il a matérialisé ce résultat dans une construction totalement originale et en utilisant un programme dont les étapes peuvent être analysées et comprises par ses utilisateurs, bien différemment donc des utilisations «classiques» de l’intelligence artificielle en tant que boîte noire.</p>
+
+<h2 id="quen-retenir-">Qu’en retenir ?</h2>
+
+<p>Il est important de souligner que la classe des problèmes susceptibles d’être soumis à ce système reste pour l’instant déterminée par quelques contraintes relativement indépassables comme un ensemble de résultats antérieurs perfectionnables, la possibilité d’évaluer efficacement d’éventuelles solutions ou avoir à sa disposition un embryon de solution dont une partie isolée peut être améliorée.<br />
+Le problème de la génération automatique de démonstrations de théorèmes, par exemple, sort complètement de ce cadre faute de pouvoir dans ce cas fournir au système un «signal de notation» <em>suffisamment riche</em>.<br />
+A l’inverse, dans le problème précédent, les clauses que doivent satisfaire les solutions sont parfaitement claires.
+Pour autant cette approche originale ouvre de prometteuses perspectives dans la résolution de nombreux problèmes - pas uniquement dans le domaine des mathématiques mais aussi dans celui des applications pratiques - par le biais d’un nouveau paradigme de la coopération homme-machine. Une coopération et non une substitution.<br />
+Le mot de la fin revient à l’un des mathématiciens à l’origine du projet, <a href="(https://people.math.wisc.edu/~ellenberg/)">Jordan Ellenberg</a> : «Je ne cherche pas à l’utiliser (ce système) pour remplacer les mathématiciens humains mais comme un multiplicateur de force.»</p>
+
+<h2 id="références">Références</h2>
+
+<ol>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i>  <a href="https://www.nature.com/articles/d41586-023-04043-w">L’article Nature</a></li>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i> <a href="https://www.nature.com/articles/s41586-023-06924-6">La publication (preview)</a></li>
+  <li><i class="fas fa-external-link-alt" aria-hidden="true"></i> <a href="https://gowers.wordpress.com/2016/05/19/reflections-on-the-recent-solution-of-the-cap-set-problem-i/">Un post de Timothy Gowers</a></li>
+</ol>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags : </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ia" class="page__taxonomy-item" rel="tag">IA</a><span class="sep">, </span>
+    
+      <a href="/tags/#math%C3%A9matiques" class="page__taxonomy-item" rel="tag">Mathématiques</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Catégories : </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#math%C3%A9matiques" class="page__taxonomy-item" rel="tag">Mathématiques</a>
+    
+    </span>
+  </p>
+
+
+        
+
+
+<p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Mis à jour :</strong> <time datetime="2023-12-21T13:25:05+00:00">21 Décembre 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Partager sur</h4>
+  
+
+  <!-- <a href="https://twitter.com/intent/tweet?text=Math%C3%A9matiques-Intelligence+Artificielle%20https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FMath%25C3%25A9matiques-IA%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> -->
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FMath%25C3%25A9matiques-IA%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgosseynx.github.io%2Fmath%25C3%25A9matiques%2FMath%25C3%25A9matiques-IA%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Partager sur LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/math%C3%A9matiques/PrixAbel2022/" class="pagination--pager" title="Prix Abel 2022
+">Précédent</a>
+    
+    
+      <a href="/Collatz/" class="pagination--pager" title="La conjecture de Collatz
+">Suivant</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <section id="static-comments">
+        
+          <!-- Start static comments -->
+          <div class="js-comments">
+            
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">Laisser un message</h4>
+            <p class="small">Votre adresse email ne sera pas visible. Les champs obligatoires sont marqués <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://staticman.cyclic.app/v2/entry/gosseynx/gosseynx.github.io/master/comments">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Chargement...</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">Message <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">Markdown est supporté.</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">Nom <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">Adresse mail <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">Site web (optionnel)</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="Mathématiques-IA">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                <input type="hidden" name="options[reCaptcha][siteKey]" value="6LfYOFEpAAAAACntolnAFEmndWuHTdZ-J2RzPm4F">
+                <input type="hidden" name="options[reCaptcha][secret]" value="MbKRHri3+Uc4HOXpyTeD8n/XFNwVU9Y2F8TZPJ48VuqHjMp6AidNSdgUtBa6x2FG2990Z0oU9fIIGPTUpCqkyJTuXYLsAfUM5GsTo3vYxwM7ux27ntL3jx5SVoGO0DsGju9fTzbPtNAPS9SoySIbyYV463I7znGkLuvtOClDdfRg5kVXY3STworCR4OW44TmZr02hg2q8lU5IBJEwDdeeGtFLtd068v7cPM3ynz2cnzu0uFFMIeYapNqeQ5Ak3RCllg5aXRhOJD7bAZ71KfX4pI5mol/KKxNqxgZbDV31o0PcUfCuQmRoLQYT1rRjlVza6ta4QXBnjaYFHAmgbcJIoiJZOLrHyknt6jjC0al4vpZl+jHGbvBqVPl7sjdE0RqcvZirUROL18HM6b+ivbWSG+9Crz++9fAVvatEdeFQRVYdS9VHfUNaxv7NQz8y4H1D/zfFbUnVWxonn9FozAFtY0hLPUrOJOEKz/O0dkz70Xj7SNx4Nby2PHXShVs8IZ9rtsq/CHJBAzu2VIxNtkHYiFy2wZfRfsH9gT1KPjTibjtx2hdkdF3oMXk40M45k3kGjIUfkpWXqR+mmZrfVtD0u/MiAe/b17gv73sioIzA4n7MXQ1UyQmXkB6lJ1du0f8EbcfwaBRqfyOB0Rg+dpKGq9zWC0l21hNrNrho1OlffU=">
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="6LfYOFEpAAAAACntolnAFEmndWuHTdZ-J2RzPm4F"></div>
+                </div>
+              
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">Envoyer</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          <script async src="https://www.google.com/recaptcha/api.js"></script>
+        
+      </section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">Vous pourriez aimer aussi</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/informatique/staticman/" rel="permalink">staticman
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Comments for static sites
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Collatz/" rel="permalink">La conjecture de Collatz
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          moins de 1 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">De la dangerosité des conjectures mathématiques
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/PrixAbel2022/" rel="permalink">Prix Abel 2022
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Prix Abel 2022
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math%C3%A9matiques/Basel/" rel="permalink">Le problème de Bâle
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute(s) de lecture
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Une brillante illustration du problème de Bâle
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Contact</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Flux</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 P. Gosse. Propulsé par <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    (function ($) {
+    $('#new_comment').submit(function () {
+      var form = this;
+
+      $(form).addClass('disabled');
+      $('#comment-form-submit').html('<i class="fas fa-spinner fa-spin fa-fw"></i> Chargement...');
+
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+          $('#comment-form-submit').html('Envoyé');
+          $('.page__comments-form .js-notice').removeClass('notice--danger');
+          $('.page__comments-form .js-notice').addClass('notice--success');
+          showAlert('Merci pour votre message, il sera visible sur le site une fois approuvé.');
+        },
+        error: function (err) {
+          console.log(err);
+          $('#comment-form-submit').html('Envoyer');
+          $('.page__comments-form .js-notice').removeClass('notice--success');
+          $('.page__comments-form .js-notice').addClass('notice--danger');
+          showAlert('Désolé, une erreur est survenue lors de la soumission. Vérifiez que les champs obligatoires ont été remplis et réessayez.');
+          $(form).removeClass('disabled');
+        }
+      });
+
+      return false;
+    });
+
+    function showAlert(message) {
+      $('.page__comments-form .js-notice').removeClass('hidden');
+      $('.page__comments-form .js-notice-text').html(message);
+    }
+  })(jQuery);
+  </script>
+
+
+  
+
+
+
+
+    
+  </body>
+</html>
