@@ -6,6 +6,7 @@ categories: Informatique
 toc: true
 toc_label: "Contenu"
 toc_sticky: true
+comments: true
 ---
 
 # Comments for static sites #
@@ -15,9 +16,9 @@ toc_sticky: true
 
 ## staticman ##
 
-I recently considered adding comments to my blog and after considering several alternatives (as [disqus](https://disqus.com/) for instance) I decided to choose [staticman](https://staticman.net) due to its open source nature and also because it keeps all the comments in your repository on GitHub and doesn't save them on a distant third party private server.  
+I recently considered adding comments to my blog and after studying several alternatives (as [disqus](https://disqus.com/) for instance) I decided to choose [staticman](https://staticman.net) due to its open source nature and also because it keeps all the comments in your repository on GitHub and doesn't save them on a distant third party private server.  
 
-Staticman is a JavaScript application which takes care of the user submitted content and transforms it in data to be strored in a sub directory of the blog repo on GitHub through a pull request. This contrent must be accepted or is automagically rendered according to the value of a moderation option.  
+Staticman is a JavaScript application which takes care of the user submitted content and transforms it in data to be strored in a sub directory of the blog repo on GitHub through a pull request. This content must be accepted or is automagically rendered according to the value of a moderation option.  
 
 I found the documentation confusing regarding the first steps of the installation and that's the reason why I decided to make it more explicit.
 
@@ -26,9 +27,9 @@ I found the documentation confusing regarding the first steps of the installatio
 ## Building a new instance ##
 
 To begin, one have to create a new GitHub account to fork the [staticman repository](https://github.com/eduardoboucas/staticman) with a name reflecting its function (we'll call it *bot-count*) and set a Personnel Access Token from this account (*Settings >> Developer settings >> PAT >> Generate New Token*) without expiration date but with an expressive name (something like  &#171;staticman PAT&#187;). This PAT must have repos and user privileges in order to work and you have to write it down somewhere for later use.  
-Then back to the blog's repository where we have to add the staticman count as a contributor with write access (*Settings >> Manage Access >> Add bot-count >> Choose Role >> write*). Once  this is done, we have to build an instance of the application on line for the collaboration to be granted. The documentation is not up to date and is about free tiers on Heroku which don't exist anymore.  
+Then back to the blog's repository where we have to add the staticman count as a contributor with write access (*Settings >> Manage Access >> Add bot-count >> Choose Role >> write*). Once  this is done, we have to build an instance of the application on line for the collaboration to be granted. The documentation on the staticman site is not up to date and is about free tiers on Heroku which don't exist anymore.  
 
-I choosed the free offer of [cyclic.sh](https://www.cyclic.sh/) where I had to log in with the staticman bot account (*bot-count*) on GitHub. The configuration was straightforward but there's some variables that needed to be set we shall see in the following. I called this instance fairly trivially *staticman.cyclic.app* (for this I had to set a subdomain to rename the app in the dashboard) but we'll call it *staticman_instance* afterwards.
+I choosed the free offer of [cyclic.sh](https://www.cyclic.sh/) where I had to log in with the staticman bot account (*bot-count*) on GitHub. The configuration was straightforward but there's some variables that needed to be set as we shall see in the following. I called this instance fairly trivially *staticman.cyclic.app* (for this I had to set a subdomain to rename the app in the dashboard) but we'll call it *staticman_instance* afterwards.
 
 - First we  clone locally the staticman repository previously cloned in our bot-count on GitHub : `git clone https://github.com/bot-count/staticman.git; cd staticman`. Then one must erase the `package-lock.json` and launch `npm install` to use it with a recent npm version. The staticman files are a bit outdated and we encountered a bunch of warnings at this stage. I had to issue a  `npm audit fix` command to supress some of them.
 
@@ -150,7 +151,7 @@ To integrate comments and forms into the general design of the minimal mistakes 
 It's worth mentionning that the comments are disabled in development mode for Jekyll sites. If we want to experiment we have to :  
 
 - prepend `JEKYLL_ENV=production` to `bundle exec jekyll serve` 
-- and put  &#171;`comments: true` &#187; in the front matter of the post inside which we wish to allow the users to comment.  
+- and put  &#171;`comments: true` &#187; in the front matter of the post at the end of which we wish to allow the users to write their comment.  
 
 That's all ! Happy commenting with staticman.
 
