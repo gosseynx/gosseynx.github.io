@@ -126,10 +126,10 @@ reCaptcha:
 and that's all for this file. You can notice here that I use staticman version 2 and not the version 3. It's because I realised that the latest doesn't work when we take the path of GitHub PAT but is tailored to [GitHub applications](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps) and the use of webhooks.  
 
 ## spam protection ##
-As we saw in the last section you better have to set up some basic spam protection when you allow comments on your pages. I won't describe all the steps to add a reCAPTCHA to your site from your [Google's developper](https://developers.google.com/) account (the minimal mistakes theme allows only the reCAPTCHA version 2) or the way to subscribe to a free, non commercial [ASKIMET](https://akismet.com/) account.  
+As we saw in the last section you better have to set up some basic spam protection when you allow comments on your pages. I won't describe all the steps to add a reCAPTCHA to your site from your [Google's developper](https://developers.google.com/) account (the minimal mistakes theme allows only the reCAPTCHA version 2) or the way to subscribe to a free, non commercial [AKISMET](https://akismet.com/) account.  
 In this post context you just have to know how to make your blog and your Staticman instance aware of these devices parameters (yes, we're talking about  the previous *very_long_key* thing).  
 
-Regarding Akismet You just have to create two more variables on the static.sh dashboard , *ASKIMET_SITE*, *ASKIMET_API_KEY* and set them respectively to your blog site and the API key given by Akismet.  
+Regarding Akismet You just have to create two more variables on the static.sh dashboard , *AKISMET_SITE*, *AKISMET_API_KEY* and set them respectively to your blog site and the API key given by Akismet.  
 The reCAPTCHA key obtained at the Google's developer site must be encrypted with the RSA private key to produce our *very_long_key*. To do so, issue a get request to *https://staticman_instance/v2/encrypt/your-recaptcha-secret-key* and on the displayed page you'll see this *very_long_key* that you have to declare in the two configuration files as described above.
 
 ## Displaying comments ##
